@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "roboto700";
+  src: url(../../assets/roboto-700.woff);
+}
+
+@font-face {
+  font-family: "roboto500";
+  src: url(../../assets/roboto-500.woff);
+}
+
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+}
+
+.header__title {
+  font-family: "roboto700", sans-serif;
+  font-weight: 700;
+  size: 20px;
+  line-height: 24px;
+  width: 200px;
+  height: 24px;
+  margin-left: 104px;
+  margin-top: 32px;
+  margin-bottom: 26px;
+  color: white;
+}
+
+.header__page-title {
+  margin-left: 322px;
+  margin-top: 32px;
+  font-family: "roboto500", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+}
+
+.header__signin {
+  margin-right: 104px;
+  width: 152px;
+  height: 48px;
+  border-radius: 100px;
+  border: 1px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  background: none;
+  border: 1px solid white;
+  margin-top: 22px;
+  color: white;
+}
