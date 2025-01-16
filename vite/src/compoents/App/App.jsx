@@ -10,28 +10,29 @@ import RegisterModal from "../Modal/RegisterModal.jsx";
 import { newsApiBaseUrl } from "../../utils/constants.js";
 import Header from "../Header/Header.jsx";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
+import dataLoader from "../../utils/data";
+
 function App() {
   //const [newsResponse, setnewsResponse] = useState(sampleNewsResponse);
   const [newsResponse, setnewsResponse] = useState(null);
-  const [activeModal, setActiveModal] = useState("login");
+  const [activeModal, setActiveModal] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
+  const [hasApiError, setHasApiError] = useState(false);
 
   const searchNews = (term, onComplete) => {
+    setHasApiError(false);
     console.log("neiwniansin", term);
-    var from = new Date();
-    from.setDate(from.getDate() - 7);
-    const url =
-      `${newsApiBaseUrl}?q=${term}&apiKey=647f4309b2b247bc8c741267672f86b6` +
-      `&pageSize=100&to=${new Date().toLocaleDateString("en-US")}` +
-      `&from=${from.toLocaleDateString("en-US")}`;
-
-    fetch(url)
-      .then((response) => response.json())
+    dataLoader
+      .searchNews(term)
       .then((data) => {
         console.log(data);
         setnewsResponse(data);
       })
-      .catch((error) => console.error(error))
+      .catch((error) => {
+        console.error(error);
+        setHasApiError(true);
+      })
+
       .finally(onComplete);
   };
 
@@ -78,10 +79,15 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <NewsStoryContext.Provider value={newsResponse}>
-        <Header />
+        <Header handleSignInBtnClick={showLoginForm} />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home handleSearch={searchNews} />} />
+            <Route
+              path="/"
+              element={
+                <Home handleSearch={searchNews} hasApiError={hasApiError} />
+              }
+            />
             <Route path="saveNews" element={<SaveNews />} />
           </Routes>
         </BrowserRouter>

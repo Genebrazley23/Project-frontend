@@ -3,4 +3,6 @@ const newsApiBaseUrl =
     ? "https://nomoreparties.co/news/v2/everything"
     : "https://newsapi.org/v2/everything";
 
-export { newsApiBaseUrl };
+const useLiveData = true;
+
+export { newsApiBaseUrl, useLiveData };

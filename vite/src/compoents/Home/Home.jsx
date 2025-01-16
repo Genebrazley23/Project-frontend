@@ -5,19 +5,29 @@ import "./Home.css";
 import Preloader from "../Preloader/preloader";
 import NewsCard from "../NewsCard/NewsCard";
 import aboutImage from "../../assets/Aboutimage.jpeg";
+import Search from "../SearchForm/Search";
 
-const Home = ({ handleSearch }) => {
+const Home = ({ handleSearch, hasApiError }) => {
   const newsStoryContext = useContext(NewsStoryContext);
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
+  const [storyCount, setStoryCount] = useState(0);
 
   const handleQueryChange = (event) => {
     setQuery(event.target.value);
   };
 
   const handleSreachClick = () => {
+    setStoryCount(3);
+    setHasSearched(true);
     setIsLoading(true);
     handleSearch(query, () => setIsLoading(false));
+  };
+
+  const handleShowMoreClick = () => {
+    setStoryCount((p) => p + 3);
+    console.log("show more clicked");
   };
 
   return (
@@ -35,27 +45,46 @@ const Home = ({ handleSearch }) => {
             className="search__input"
             onChange={handleQueryChange}
           />
-          <button
-            className="search__input-button"
-            onClick={(e) => handleSearch(query)}
-          >
+          <button className="search__input-button" onClick={handleSreachClick}>
             <span className="search__input-button-icon">Search</span>
           </button>
         </div>
       </div>
-
-      <div className="search__results">
-        {isLoading ? (
-          <Preloader text="Loading..." />
-        ) : (
-          <div className="search__results-container">
-            {newsStoryContext?.articles &&
-              newsStoryContext.articles.map((article, index) => (
-                <NewsCard news={article} key={index} />
-              ))}
-          </div>
-        )}
-      </div>
+      {hasSearched && (
+        <div className="search__results">
+          {isLoading ? (
+            <Preloader text="Loading..." />
+          ) : (
+            (newsStoryContext?.articles?.length && (
+              <div className="search__results-container">
+                <div>
+                  <Search />
+                </div>
+                <div className="search__results-list">
+                  {newsStoryContext?.articles &&
+                    newsStoryContext.articles
+                      .slice(0, storyCount)
+                      .map((article, index) => (
+                        <NewsCard news={article} key={index} index={index} />
+                      ))}
+                </div>
+              </div>
+            )) ||
+            (!newsStoryContext?.articles?.length && (
+              <p>
+                {hasApiError
+                  ? "Sorry, something went wrong during the request. Please try again later."
+                  : "No results found"}
+              </p>
+            ))
+          )}
+          {storyCount < newsStoryContext?.articles?.length && (
+            <button className="showMore__button" onClick={handleShowMoreClick}>
+              <span className="showMore__button-text">Show more</span>
+            </button>
+          )}
+        </div>
+      )}
       <div className="about__container">
         <img src={aboutImage} alt="about Image" className="about__image" />
         <h1 className="about__title">About the author</h1>
