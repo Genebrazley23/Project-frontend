@@ -1,0 +1,14 @@
+.modal__submit-signup {
+  background-color: white;
+  border: none;
+  margin-top: 16px;
+  color: #00000080;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.modal__signup-text {
+  color: #0f54ff80;
+}

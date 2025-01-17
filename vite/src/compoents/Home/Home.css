@@ -1,0 +1,275 @@
+@font-face {
+  font-family: "robotoslab400reg";
+  src: url(../../assets/robotoslab400reg.woff);
+}
+
+@font-face {
+  font-family: "roboto400reg";
+  src: url(../../assets/roboto-400.woff);
+}
+
+.home__container {
+  position: relative;
+  width: 115vw;
+}
+
+.search__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home__image {
+  width: 100%;
+  height: 576px;
+  background-color: #d1d2d6;
+  background-blend-mode: multiply;
+}
+
+.home__title {
+  font-family: "robotoslab400reg", sans-serif;
+  font-weight: 400;
+  font-size: 55px;
+  line-height: 64px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 288px;
+  color: #ffffff;
+}
+
+.home__description {
+  font-family: "robotoslab400reg", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding-bottom: 32px;
+  height: 48px;
+}
+
+.search__results {
+  padding-bottom: 40px;
+  background: #f6f4f4;
+}
+
+.search__results-container {
+}
+
+.search__results-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 40px;
+  margin-bottom: 32px;
+}
+
+.search__results-container .news-card {
+  width: 32%;
+}
+
+.search__input {
+  width: 608px;
+  height: 64px;
+  bottom: 30%;
+  left: 20%;
+  border-radius: 100px;
+  border: 1px;
+  margin-top: 432px;
+  margin-bottom: 80px;
+  outline: none;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.search__input-button {
+  position: absolute;
+  right: 0px;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  width: 168px;
+  height: 67px;
+  border-radius: 100px;
+  margin-top: 465px;
+}
+
+.search__input-button:hover {
+  background-color: #0056b3;
+}
+
+.home__topHalf {
+  position: relative;
+}
+
+.about__container {
+  position: relative;
+}
+
+.about__title {
+  position: absolute;
+  top: 131px;
+  left: 620px;
+  font-family: "robotoslab400reg", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  text-wrap: nowrap;
+}
+
+.about__description {
+  position: absolute;
+  top: 201px;
+  left: 624px;
+  width: 600px;
+  height: 201px;
+  font-family: "roboto400reg", sans-serif;
+  font-weight: 400px;
+  font-size: 18px;
+  line-height: 24px;
+}
+.about__image {
+  width: 464px;
+  height: 464px;
+  border-radius: 1000px;
+  margin-top: 80px;
+  margin-left: 104px;
+}
+
+@media screen and (max-width: 880px) {
+  .header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    width: 150%;
+    border-bottom: 1px solid #ffffff;
+  }
+  .home__container {
+    width: 150vw;
+    position: relative;
+  }
+  .home__image {
+    width: 100%;
+    height: 576px;
+    background-color: #d1d2d6;
+    background-blend-mode: multiply;
+  }
+  .home__title {
+    font-family: "robotoslab400reg", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 288px;
+    color: #ffffff;
+    width: 285px;
+  }
+
+  .home__description {
+    font-family: "robotoslab400reg", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding-bottom: 32px;
+    height: 72px;
+    margin-top: -16px;
+    width: 288px;
+  }
+
+  .search__input {
+    width: 288px;
+    height: 56px;
+    bottom: 30%;
+    left: 20%;
+    border-radius: 100px;
+    border: 1px;
+    margin-top: 307px;
+    margin-bottom: 80px;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px;
+  }
+
+  .search__input-button {
+    position: absolute;
+    right: 0px;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    cursor: pointer;
+    width: 288px;
+    height: 56px;
+    border-radius: 100px;
+    margin-top: 426px;
+  }
+
+  .search__results-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__title {
+    position: absolute;
+    top: 542px;
+    left: 107px;
+    font-family: "robotoslab400reg", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    text-wrap: nowrap;
+    width: 288px;
+    height: 40px;
+  }
+
+  .about__description {
+    position: absolute;
+    margin-top: 450px;
+    left: 124px;
+    width: 288px;
+    height: 240px;
+    font-family: "roboto400reg", sans-serif;
+    font-weight: 400px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .about__image {
+    width: 464px;
+    height: 464px;
+    border-radius: 1000px;
+    margin: 273px;
+    margin-left: -7px;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .search__results-container .news-card {
+    width: 90%;
+  }
+}

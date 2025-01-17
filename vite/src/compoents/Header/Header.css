@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "roboto700";
+  src: url(../../assets/roboto-700.woff);
+}
+
+@font-face {
+  font-family: "roboto500";
+  src: url(../../assets/roboto-500.woff);
+}
+
+@font-face {
+  font-family: "robotoslab700";
+  src: url(../../assets/robotoslab700.woff);
+}
+
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  width: 115%;
+  border-bottom: 1px solid #ffffff;
+}
+
+.header__title {
+  font-family: "roboto700", sans-serif;
+  font-weight: 400;
+  size: 20px;
+  line-height: 24px;
+  width: 200px;
+  height: 24px;
+  margin-left: 104px;
+  margin-top: 32px;
+  margin-bottom: 26px;
+  color: white;
+}
+
+.header__page-title {
+  margin-left: 322px;
+  margin-top: 32px;
+  font-family: "roboto500", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+}
+
+.header__signin {
+  margin-right: 104px;
+  width: 152px;
+  height: 48px;
+  border-radius: 100px;
+  border: 1px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  background: none;
+  border: 1px solid white;
+  margin-top: 22px;
+  color: white;
+}
+
+.header__menu {
+  margin-right: 104px;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 24px;
+  background: none;
+  margin-top: 22px;
+  color: white;
+  border: none;
+  padding-left: 382px;
+  height: 24px;
+  width: 24px;
+}
+
+.header__menu-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+@media screen and (max-width: 880px) {
+  .header {
+    justify-content: space-between;
+    z-index: 1;
+    width: 150%;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .mobile__hidden {
+    display: none;
+  }
+
+  .header__signin {
+    margin-right: 104px;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 24px;
+    background: none;
+    margin-top: 22px;
+    color: white;
+    border: none;
+    padding-left: 382px;
+    height: 24px;
+    width: 24px;
+  }
+
+  .header__title {
+    font-family: "roboto700", sans-serif;
+    font-weight: 400;
+    size: 20px;
+    line-height: 24px;
+    width: 200px;
+    height: 24px;
+    margin-left: 16px;
+    margin-top: 32px;
+    margin-bottom: 26px;
+    color: white;
+  }
+
+  .header__page-title {
+    display: none;
+    margin-left: 175px;
+    margin-top: 32px;
+    font-family: "roboto500", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+  }
+  .menu__container {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1b22;
+    height: 338px;
+  }
+
+  .header__top-menu {
+    padding: 16px;
+    font-family: "robotoslab700", sans-serif;
+    border-bottom: 1px solid #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .header__menu-title {
+    margin-top: 16px;
+    margin-left: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 56px;
+    color: #ffffff;
+    font-family: "roboto500", sans-serif;
+  }
+
+  .header__menu-signin {
+    display: block;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 24px;
+    width: 288px;
+    height: 56px;
+    border-radius: 100px;
+    border: 1px;
+  }
+
+  .menu__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .desktop__hidden {
+    display: none;
+  }
+}
