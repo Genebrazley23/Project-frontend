@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { NewsStoryContext } from "../../context/NewsStoryContext";
 import "./App.css";
@@ -80,7 +80,7 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <NewsStoryContext.Provider value={newsResponse}>
         <Header handleSignInBtnClick={showLoginForm} />
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route
               path="/"
@@ -90,7 +90,7 @@ function App() {
             />
             <Route path="saveNews" element={<SaveNews />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
         {activeModal === "login" && (
           <LoginModal
             isOpen={true}
