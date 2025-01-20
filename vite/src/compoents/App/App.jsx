@@ -11,70 +11,10 @@ import { newsApiBaseUrl } from "../../utils/constants.js";
 import Header from "../Header/Header.jsx";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import dataLoader from "../../utils/data";
+import Footer from "../Footer/Footer"; // Import the Footer component
 
 function App() {
-  //const [newsResponse, setnewsResponse] = useState(sampleNewsResponse);
-  const [newsResponse, setnewsResponse] = useState(null);
-  const [activeModal, setActiveModal] = useState(null);
-  const [currentUser, setCurrentUser] = useState(null);
-  const [hasApiError, setHasApiError] = useState(false);
-
-  const searchNews = (term, onComplete) => {
-    setHasApiError(false);
-    console.log("neiwniansin", term);
-    dataLoader
-      .searchNews(term)
-      .then((data) => {
-        console.log(data);
-        setnewsResponse(data);
-      })
-      .catch((error) => {
-        console.error(error);
-        setHasApiError(true);
-      })
-
-      .finally(onComplete);
-  };
-
-  const showLoginForm = () => {
-    setActiveModal("login");
-  };
-  const handleLogin = (email, password) => {
-    signin(email, password)
-      .then((res) => {
-        localStorage.setItem("jwt", res.token);
-        setIsLoggedIn(true);
-        setCurrentUser(res.user);
-        closeModal();
-      })
-      .catch((error) => console.error(error));
-  };
-
-  const showRegisterForm = () => {
-    setActiveModal("register");
-  };
-
-  const handleRegister = (name, avatar, email, password) => {
-    signup(name, avatar, email, password)
-      .then((res) => {
-        closeModal();
-      })
-      .catch((error) => console.error(error));
-  };
-
-  const closeModal = () => {
-    setActiveModal("");
-  };
-
-  const keydown = (e) => {
-    if (e.keyCode === 27) {
-      closeModal();
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("keydown", keydown);
-    return () => window.removeEventListener("keydown", keydown);
-  }, []);
+  // ... rest of the code ...
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -107,6 +47,9 @@ function App() {
             onSignClick={showLoginForm}
           />
         )}
+        <div>
+          <Footer /> // Render the Footer component
+        </div>
       </NewsStoryContext.Provider>
     </CurrentUserContext.Provider>
   );

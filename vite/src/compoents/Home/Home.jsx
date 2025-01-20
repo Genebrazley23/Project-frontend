@@ -6,6 +6,7 @@ import Preloader from "../Preloader/preloader";
 import NewsCard from "../NewsCard/NewsCard";
 import aboutImage from "../../assets/Aboutimage.jpeg";
 import Search from "../SearchForm/Search";
+import Footer from "../Footer/Footer";
 
 const Home = ({ handleSearch, hasApiError }) => {
   const newsStoryContext = useContext(NewsStoryContext);
@@ -96,6 +97,7 @@ const Home = ({ handleSearch, hasApiError }) => {
           learned there, and how you can help potential customers.
         </p>
       </div>
+      {true && <Footer />}
     </div>
   );
 };
