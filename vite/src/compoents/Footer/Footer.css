@@ -1,0 +1,13 @@
+.footer__container {
+  background: "red";
+  color: "black";
+  padding: "20px";
+  text-align: "center";
+}
+
+.footer {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 10px 0;
+  color: #555;
+}

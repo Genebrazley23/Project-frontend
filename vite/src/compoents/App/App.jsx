@@ -11,13 +11,14 @@ import { newsApiBaseUrl } from "../../utils/constants.js";
 import Header from "../Header/Header.jsx";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import dataLoader from "../../utils/data";
+import Footer from "../Footer/Footer";
 
 function App() {
-  //const [newsResponse, setnewsResponse] = useState(sampleNewsResponse);
   const [newsResponse, setnewsResponse] = useState(null);
   const [activeModal, setActiveModal] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
   const [hasApiError, setHasApiError] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const searchNews = (term, onComplete) => {
     setHasApiError(false);
@@ -39,8 +40,17 @@ function App() {
   const showLoginForm = () => {
     setActiveModal("login");
   };
+
+  const signIn = (email, password) => {
+    /* return { token: "faketoken", user: { email: email } };*/
+    return new Promise((resolve) => {
+      console.log("signin", email, password);
+      resolve({ token: "faketoken", user: { email: email, name: "homer" } });
+    });
+  };
+
   const handleLogin = (email, password) => {
-    signin(email, password)
+    signIn(email, password)
       .then((res) => {
         localStorage.setItem("jwt", res.token);
         setIsLoggedIn(true);
@@ -75,12 +85,11 @@ function App() {
     window.addEventListener("keydown", keydown);
     return () => window.removeEventListener("keydown", keydown);
   }, []);
-
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <NewsStoryContext.Provider value={newsResponse}>
         <Header handleSignInBtnClick={showLoginForm} />
-        <HashRouter>
+        <HashRouter basename="/">
           <Routes>
             <Route
               path="/"
@@ -107,6 +116,9 @@ function App() {
             onSignClick={showLoginForm}
           />
         )}
+        <div>
+          <Footer />
+        </div>
       </NewsStoryContext.Provider>
     </CurrentUserContext.Provider>
   );

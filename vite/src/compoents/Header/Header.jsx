@@ -2,6 +2,7 @@ import "./Header.css";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useContext, useState } from "react";
 import closeButton from "../../assets/Closeicon.png";
+import { HashLink } from "react-router-hash-link";
 
 function Header({ handleSignInBtnClick, handleSignUpBtnClick }) {
   const currentUser = useContext(CurrentUserContext);
@@ -49,20 +50,11 @@ function Header({ handleSignInBtnClick, handleSignUpBtnClick }) {
       <div className="header__spacer"></div>
       <div className="header__page-title mobile__hidden">Home</div>
       {currentUser && (
-        <Link to="/profile" className="mobile__hidden">
+        <HashLink to="/saveNews" className="mobile__hidden">
           <div className="header__user-container">
-            <p className="header__username">{currentUser.name}</p>
-            {currentUser.avatar ? (
-              <img
-                src={currentUser.avatar}
-                alt={currentUser.name}
-                className="avatar"
-              />
-            ) : (
-              <div className="circle"> {currentUser.name.substring(0, 1)}</div>
-            )}
+            <p className="header__username">{currentUser?.name}</p>
           </div>
-        </Link>
+        </HashLink>
       )}
 
       {!currentUser && (
