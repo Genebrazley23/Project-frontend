@@ -97,7 +97,9 @@ const Home = ({ handleSearch, hasApiError }) => {
           learned there, and how you can help potential customers.
         </p>
       </div>
-      {<Footer />}
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };

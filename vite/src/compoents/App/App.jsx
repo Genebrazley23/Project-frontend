@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { NewsStoryContext } from "../../context/NewsStoryContext";
 import "./App.css";
@@ -89,17 +89,15 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <NewsStoryContext.Provider value={newsResponse}>
         <Header handleSignInBtnClick={showLoginForm} />
-        <HashRouter basename="/">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Home handleSearch={searchNews} hasApiError={hasApiError} />
-              }
-            />
-            <Route path="saveNews" element={<SaveNews />} />
-          </Routes>
-        </HashRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home handleSearch={searchNews} hasApiError={hasApiError} />
+            }
+          />
+          <Route path="saveNews" element={<SaveNews />} />
+        </Routes>
         {activeModal === "login" && (
           <LoginModal
             isOpen={true}
@@ -116,9 +114,6 @@ function App() {
             onSignClick={showLoginForm}
           />
         )}
-        <div>
-          <Footer />
-        </div>
       </NewsStoryContext.Provider>
     </CurrentUserContext.Provider>
   );
