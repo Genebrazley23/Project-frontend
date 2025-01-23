@@ -1,13 +1,64 @@
+@font-face {
+  font-family: "roboto400reg";
+  src: url(../../assets/roboto-400.woff);
+}
+
 .footer__container {
-  background: "red";
-  color: "black";
-  padding: "20px";
-  text-align: "center";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer {
-  background-color: #f4f4f4;
   text-align: center;
   padding: 10px 0;
   color: #555;
+  margin-top: 80px;
+}
+
+.footer__text {
+  font-family: "roboto400reg", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  padding-left: 104px;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+}
+
+.home__link {
+  color: black;
+  font-family: "roboto400reg", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.tripleten__link {
+  color: black;
+  padding: 0 40px;
+  font-family: "roboto400reg", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.tripleten__hyperlink {
+  text-decoration: none;
+  color: black;
+}
+
+.fb__image {
+  width: 24px;
+  height: 24px;
+  padding: 28px 104px 28px 0;
+}
+
+.github__image {
+  width: 20px;
+  height: 19px;
+  padding: 28px 24px 28px 0;
 }

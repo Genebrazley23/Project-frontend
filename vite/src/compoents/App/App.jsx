@@ -19,6 +19,12 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [hasApiError, setHasApiError] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [headerTheme, setHeaderTheme] = useState("header__light");
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    setIsLoggedIn(false);
+  };
 
   const searchNews = (term, onComplete) => {
     setHasApiError(false);
@@ -88,15 +94,26 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <NewsStoryContext.Provider value={newsResponse}>
-        <Header handleSignInBtnClick={showLoginForm} />
+        <Header
+          handleSignInBtnClick={showLoginForm}
+          handleLogout={handleLogout}
+          headerTheme={headerTheme}
+        />
         <Routes>
           <Route
             path="/"
             element={
-              <Home handleSearch={searchNews} hasApiError={hasApiError} />
+              <Home
+                handleSearch={searchNews}
+                hasApiError={hasApiError}
+                setHeaderTheme={setHeaderTheme}
+              />
             }
           />
-          <Route path="saveNews" element={<SaveNews />} />
+          <Route
+            path="saveNews"
+            element={<SaveNews setHeaderTheme={setHeaderTheme} />}
+          />
         </Routes>
         {activeModal === "login" && (
           <LoginModal

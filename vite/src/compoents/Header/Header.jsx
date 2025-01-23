@@ -3,9 +3,14 @@ import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useContext, useState } from "react";
 import closeButton from "../../assets/Closeicon.png";
 import NewsExplorer from "../../assets/NewsExplorer.png";
-import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 
-function Header({ handleSignInBtnClick, handleSignUpBtnClick }) {
+function Header({
+  handleSignInBtnClick,
+  handleSignUpBtnClick,
+  handleLogout,
+  headerTheme,
+}) {
   const currentUser = useContext(CurrentUserContext);
 
   const [showMenuBtn, setShowMenuBtn] = useState(false);
@@ -27,7 +32,7 @@ function Header({ handleSignInBtnClick, handleSignUpBtnClick }) {
   }
 
   return (
-    <header className="header">
+    <header className={`header ${headerTheme}`}>
       {showMenuBtn && (
         <div className="header__menu-overlay">
           {" "}
@@ -49,13 +54,22 @@ function Header({ handleSignInBtnClick, handleSignUpBtnClick }) {
       )}
       <div className="header__title">NewsExplorer</div>
       <div className="header__spacer"></div>
-      <div className="header__page-title mobile__hidden">Home</div>
+      <Link to="/" className="mobile__hidden no-decoration">
+        <div className="header__page-title mobile__hidden">Home</div>
+      </Link>
       {currentUser && (
-        <HashLink to="/saveNews" className="mobile__hidden">
+        <Link to="/saveNews" className="mobile__hidden no-decoration">
+          <div className="header__page-title mobile__hidden">
+            Saved Articles
+          </div>
+        </Link>
+      )}
+      {currentUser && (
+        <button onClick={handleLogout} className="mobile__hidden ">
           <div className="header__user-container">
             <p className="header__username">{currentUser?.name}</p>
           </div>
-        </HashLink>
+        </button>
       )}
 
       {!currentUser && (

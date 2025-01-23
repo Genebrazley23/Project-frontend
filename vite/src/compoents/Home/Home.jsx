@@ -1,5 +1,5 @@
 import { NewsStoryContext } from "../../context/NewsStoryContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Homeimage from "../../assets/Homeimage.jpeg";
 import "./Home.css";
 import Preloader from "../Preloader/preloader";
@@ -8,7 +8,7 @@ import aboutImage from "../../assets/Aboutimage.jpeg";
 import Search from "../SearchForm/Search";
 import Footer from "../Footer/Footer";
 
-const Home = ({ handleSearch, hasApiError }) => {
+const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
   const newsStoryContext = useContext(NewsStoryContext);
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -30,6 +30,10 @@ const Home = ({ handleSearch, hasApiError }) => {
     setStoryCount((p) => p + 3);
     console.log("show more clicked");
   };
+
+  useEffect(() => {
+    setHeaderTheme("header__light");
+  }, []);
 
   return (
     <div className="home__container">
@@ -87,15 +91,25 @@ const Home = ({ handleSearch, hasApiError }) => {
         </div>
       )}
       <div className="about__container">
-        <img src={aboutImage} alt="about Image" className="about__image" />
-        <h1 className="about__title">About the author</h1>
-        <p className="about__description">
-          This block describes the project author. Here you should indicate your
-          name, what you do, and which development technologies you know.
-          <br></br> <br></br>
-          You can also talk about your experience with TripleTen, what you
-          learned there, and how you can help potential customers.
-        </p>
+        <div className="about__image-container">
+          <img
+            width="464"
+            height="464"
+            src={aboutImage}
+            alt="about Image"
+            className="about__image"
+          />
+        </div>
+        <div className="about__details-container">
+          <h1 className="about__title">About the author</h1>
+          <p className="about__description">
+            This block describes the project author. Here you should indicate
+            your name, what you do, and which development technologies you know.
+            <br></br> <br></br>
+            You can also talk about your experience with TripleTen, what you
+            learned there, and how you can help potential customers.
+          </p>
+        </div>
       </div>
       <div>
         <Footer />
