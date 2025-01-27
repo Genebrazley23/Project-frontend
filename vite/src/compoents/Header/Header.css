@@ -13,13 +13,29 @@
   src: url(../../assets/robotoslab700.woff);
 }
 
+.header__light {
+  color: #ffffff;
+}
+
+.header__dark {
+  color: black;
+}
+
+.header__spacer {
+  flex-grow: 1;
+}
+
 .header {
   position: absolute;
   display: flex;
   justify-content: space-between;
   z-index: 1;
-  width: 115%;
+  width: 100%;
   border-bottom: 1px solid #ffffff;
+  align-items: center;
+}
+
+.header__user-container {
 }
 
 .header__title {
@@ -30,23 +46,24 @@
   width: 200px;
   height: 24px;
   margin-left: 104px;
-  margin-top: 32px;
-  margin-bottom: 26px;
-  color: white;
 }
 
 .header__page-title {
-  margin-left: 322px;
-  margin-top: 32px;
   font-family: "roboto500", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  color: white;
+  padding-right: 20px;
+  white-space: nowrap;
 }
 
+.mobile__hidden {
+  width: 100px;
+  border-radius: 100px;
+  border: 1px #d1d2d6;
+  margin: 14px 40px 12px -48px;
+}
 .header__signin {
-  margin-right: 104px;
   width: 152px;
   height: 48px;
   border-radius: 100px;
@@ -56,8 +73,8 @@
   line-height: 24px;
   background: none;
   border: 1px solid white;
-  margin-top: 22px;
-  color: white;
+
+  margin: 21px 40px 14px 0;
 }
 
 .header__menu {
@@ -66,12 +83,13 @@
   font-size: 34px;
   line-height: 24px;
   background: none;
-  margin-top: 22px;
-  color: white;
+  margin-top: 0px;
+
   border: none;
   padding-left: 382px;
   height: 24px;
   width: 24px;
+  padding-left: initial;
 }
 
 .header__menu-overlay {
@@ -84,16 +102,47 @@
   z-index: 1000;
 }
 
+.header__username {
+  margin-right: 50px;
+  padding-left: 10px;
+}
+.header__back-button {
+  width: 17px;
+  height: 16px;
+  position: absolute;
+  margin-left: 28px;
+  margin-top: -28px;
+}
+
+.header__dark .logout__button {
+  border: 1px solid #d1d2d6;
+}
+
+.logout__button {
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid #d1d2d6;
+}
+
 @media screen and (max-width: 880px) {
   .header {
     justify-content: space-between;
     z-index: 1;
-    width: 150%;
+    width: 100%;
     border-bottom: 1px solid #ffffff;
   }
 
-  .mobile__hidden {
-    display: none;
+  .header__menu {
+    margin-right: 16px;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 24px;
+    background: none;
+    margin-top: 16px;
+    border: none;
+    height: 24px;
+    width: 24px;
+    display: block;
   }
 
   .header__signin {
@@ -103,7 +152,6 @@
     line-height: 24px;
     background: none;
     margin-top: 22px;
-    color: white;
     border: none;
     padding-left: 382px;
     height: 24px;
@@ -117,10 +165,7 @@
     line-height: 24px;
     width: 200px;
     height: 24px;
-    margin-left: 16px;
-    margin-top: 32px;
-    margin-bottom: 26px;
-    color: white;
+    margin: 16px;
   }
 
   .header__page-title {
@@ -131,7 +176,6 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
-    color: white;
   }
   .menu__container {
     display: flex;
@@ -146,7 +190,6 @@
     border-bottom: 1px solid #ffffff;
     font-size: 16px;
     font-weight: 700;
-    color: white;
   }
 
   .header__menu-title {
@@ -155,7 +198,6 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 56px;
-    color: #ffffff;
     font-family: "roboto500", sans-serif;
   }
 
@@ -178,6 +220,12 @@
     border: none;
     width: 24px;
     height: 24px;
+  }
+  .header__signin {
+    display: none;
+  }
+  .header__menu {
+    display: block;
   }
 }
 

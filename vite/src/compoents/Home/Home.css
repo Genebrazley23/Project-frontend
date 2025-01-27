@@ -10,7 +10,7 @@
 
 .home__container {
   position: relative;
-  width: 115vw;
+  width: 100%;
 }
 
 .search__container {
@@ -22,9 +22,12 @@
 
 .home__image {
   width: 100%;
-  height: 576px;
+
   background-color: #d1d2d6;
   background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .home__title {
@@ -114,56 +117,62 @@
 
 .about__container {
   position: relative;
+  display: flex;
+  padding-top: 20px;
+}
+
+.about__details-container {
+  flex-grow: 1;
+  margin-left: 32px;
+  margin-top: 40px;
 }
 
 .about__title {
-  position: absolute;
   top: 131px;
   left: 620px;
   font-family: "robotoslab400reg", sans-serif;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 46px;
   text-wrap: nowrap;
 }
 
 .about__description {
-  position: absolute;
   top: 201px;
   left: 624px;
-  width: 600px;
+  width: 100%;
   height: 201px;
   font-family: "roboto400reg", sans-serif;
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
+  text-align: start;
+  width: 80%;
 }
+
 .about__image {
-  width: 464px;
-  height: 464px;
   border-radius: 1000px;
   margin-top: 80px;
   margin-left: 104px;
+  flex-grow: 0;
+  width: 464px;
+  height: 464px;
+}
+
+.about__image-container {
+  margin-top: -76px;
 }
 
 @media screen and (max-width: 880px) {
-  .header {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    z-index: 1;
-    width: 150%;
-    border-bottom: 1px solid #ffffff;
-  }
-  .home__container {
-    width: 150vw;
-    position: relative;
-  }
   .home__image {
     width: 100%;
     height: 576px;
     background-color: #d1d2d6;
     background-blend-mode: multiply;
+  }
+
+  .about__image-container {
+    margin-top: 0;
   }
   .home__title {
     font-family: "robotoslab400reg", sans-serif;
@@ -231,45 +240,38 @@
     flex-direction: column;
     align-items: center;
   }
+  .about__container {
+    flex-direction: column;
 
-  .about__title {
-    position: absolute;
-    top: 542px;
-    left: 107px;
-    font-family: "robotoslab400reg", sans-serif;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 46px;
-    text-wrap: nowrap;
-    width: 288px;
-    height: 40px;
+    padding: 0 10px;
   }
 
   .about__description {
-    position: absolute;
-    margin-top: 450px;
-    left: 124px;
-    width: 288px;
-    height: 240px;
-    font-family: "roboto400reg", sans-serif;
-    font-weight: 400px;
+    text-align: start;
     font-size: 18px;
     line-height: 24px;
+    width: 95%;
   }
+
+  .about__details-container {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
   .about__image {
-    width: 464px;
-    height: 464px;
+    width: 300px;
+    height: 300px;
     border-radius: 1000px;
-    margin: 273px;
-    margin-left: -7px;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0;
+    margin-top: 32px;
   }
 
   .search__results-container .news-card {
     width: 90%;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .about__description {
+    width: 80%;
   }
 }

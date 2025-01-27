@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { NewsStoryContext } from "../../context/NewsStoryContext";
 import "./App.css";
@@ -19,6 +19,12 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [hasApiError, setHasApiError] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [headerTheme, setHeaderTheme] = useState("header__light");
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    setIsLoggedIn(false);
+  };
 
   const searchNews = (term, onComplete) => {
     setHasApiError(false);
@@ -88,18 +94,27 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <NewsStoryContext.Provider value={newsResponse}>
-        <Header handleSignInBtnClick={showLoginForm} />
-        <HashRouter basename="/">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Home handleSearch={searchNews} hasApiError={hasApiError} />
-              }
-            />
-            <Route path="saveNews" element={<SaveNews />} />
-          </Routes>
-        </HashRouter>
+        <Header
+          handleSignInBtnClick={showLoginForm}
+          handleLogout={handleLogout}
+          headerTheme={headerTheme}
+        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                handleSearch={searchNews}
+                hasApiError={hasApiError}
+                setHeaderTheme={setHeaderTheme}
+              />
+            }
+          />
+          <Route
+            path="saveNews"
+            element={<SaveNews setHeaderTheme={setHeaderTheme} />}
+          />
+        </Routes>
         {activeModal === "login" && (
           <LoginModal
             isOpen={true}
@@ -116,9 +131,6 @@ function App() {
             onSignClick={showLoginForm}
           />
         )}
-        <div>
-          <Footer />
-        </div>
       </NewsStoryContext.Provider>
     </CurrentUserContext.Provider>
   );
