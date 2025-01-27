@@ -92,13 +92,7 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
       )}
       <div className="about__container">
         <div className="about__image-container">
-          <img
-            width="464"
-            height="464"
-            src={aboutImage}
-            alt="about Image"
-            className="about__image"
-          />
+          <img src={aboutImage} alt="about Image" className="about__image" />
         </div>
         <div className="about__details-container">
           <h1 className="about__title">About the author</h1>

@@ -9,17 +9,19 @@ const Footer = () => {
       <div className="footer__container">
         <p className="footer__text">©2024 Supersite, Powered by News API</p>
         <div className="footer__links">
-          <p className="home__link">Home</p>
-          <p className="tripleten__link">
-            <a
-              className="tripleten__hyperlink"
-              href="https://www.tripleten.com"
-              onClick={() => console.log("TripleTen link clicked")}
-            >
-              TripleTen
-            </a>
-          </p>
-
+          <div className="footer__links__container">
+            <p className=" home__link">Home</p>
+            <p className="tripleten__link">
+              <a
+                className="tripleten__hyperlink"
+                href="https://www.tripleten.com"
+                onClick={() => console.log("TripleTen link clicked")}
+              >
+                TripleTen
+              </a>
+            </p>
+          </div>
+          <div className="spacer"></div>
           <a
             href="https://github.com"
             onClick={() => console.log("Github link clicked")}

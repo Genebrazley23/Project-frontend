@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import closeButton from "../../assets/Closeicon.png";
 import NewsExplorer from "../../assets/NewsExplorer.png";
 import { Link } from "react-router-dom";
+import backbutton from "../../assets/back.png";
 
 function Header({
   handleSignInBtnClick,
@@ -65,9 +66,13 @@ function Header({
         </Link>
       )}
       {currentUser && (
-        <button onClick={handleLogout} className="mobile__hidden ">
+        <button
+          onClick={handleLogout}
+          className="mobile__hidden logout__button "
+        >
           <div className="header__user-container">
             <p className="header__username">{currentUser?.name}</p>
+            <img src={backbutton} alt="back" className="header__back-button" />
           </div>
         </button>
       )}
@@ -80,12 +85,15 @@ function Header({
           >
             Sign in
           </button>
-          <button
-            className="header__menu desktop__hidden"
-            onClick={handleMenuBtnClick}
-          >
-            =
-          </button>
+          <div>
+            {" "}
+            <button
+              className="header__menu desktop__hidden"
+              onClick={handleMenuBtnClick}
+            >
+              =
+            </button>
+          </div>
         </>
       )}
     </header>

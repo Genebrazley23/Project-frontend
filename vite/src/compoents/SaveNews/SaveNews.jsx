@@ -5,6 +5,7 @@ import Preloader from "../Preloader/preloader";
 import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
 import "./SaveNews.css";
 import { Navigate, useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const saveNews = ({ setHeaderTheme }) => {
   const [savedArticles, setSavedArticles] = useState([]);
@@ -55,11 +56,16 @@ const saveNews = ({ setHeaderTheme }) => {
   }, []);
   return (
     <div className="saveNews__container">
-      <h1>saveNews</h1>
-      <div>
+      <h1 className="saveNews__title">Saved articles</h1>
+      <div className="saveNews__subtitle">
         {currentUser?.name}, you have {savedArticles?.length} saved articles
       </div>
-      <div>by keywords: {keywordDecription}</div>
+      <div className="saveNews__keyword">
+        by keywords:
+        <span className="saveNews__keyword-description">
+          {keywordDecription}
+        </span>
+      </div>
       <div className="search__results">
         {isLoading ? (
           <Preloader text="Loading..." />
@@ -87,6 +93,9 @@ const saveNews = ({ setHeaderTheme }) => {
             </p>
           ))
         )}
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

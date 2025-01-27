@@ -28,17 +28,19 @@ dataLoader.getSavedArticles = () => {
         keyword: "yahoo",
         source: {
           id: null,
-          name: "Yahoo Entertainment",
+          name: "Gizmodo.com",
         },
-        author: null,
+        author: "Todd Feathers",
         title:
-          "BE Semiconductor Set to Capitalize on Growth from Apple and Nvidia Innovations",
-        description: null,
-        url: "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_fb5317d0-5309-4260-9245-348257f78c1f",
-        urlToImage: null,
-        publishedAt: "2024-12-23T14:05:44Z",
+          "NSO Group Found Liable for Hacking WhatsApp Users in ‘Huge Win for Privacy’",
+        description:
+          "A federal judge ruled in favor of WhatsApp in a lawsuit the company brought against Israeli spyware maker linked to hacking of diplomats, human rights activists, and journalists.",
+        url: "https://gizmodo.com/nso-group-found-liable-for-hacking-whatsapp-users-in-huge-win-for-privacy-2000542405",
+        urlToImage:
+          "https://gizmodo.com/app/uploads/2024/12/nso-whatsapp-lawsuit.jpg",
+        publishedAt: "2024-12-23T15:55:00Z",
         content:
-          "If you click 'Accept all', we and our partners, including 238 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+678 chars]",
+          "A federal court has found NSO Group, an Israeli spyware company, liable for reverse engineering WhatsApp in order to install malware on the phones of more than 1,400 people around the world, includin… [+2590 chars]",
       },
       {
         keyword: "google",
