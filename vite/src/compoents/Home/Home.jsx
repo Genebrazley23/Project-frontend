@@ -7,6 +7,7 @@ import NewsCard from "../NewsCard/NewsCard";
 import aboutImage from "../../assets/Aboutimage.jpeg";
 import Search from "../SearchForm/Search";
 import Footer from "../Footer/Footer";
+import notfound from "../../assets/notfound.png";
 
 const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
   const newsStoryContext = useContext(NewsStoryContext);
@@ -38,7 +39,10 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
   return (
     <div className="home__container">
       <div className="home__topHalf">
-        <img src={Homeimage} alt="Home Image" className="home__image" />
+        <div
+          style={{ backgroundImage: `url(${Homeimage})` }}
+          className="home__image"
+        ></div>
         <h1 className="home__title">What's going on in the world ?</h1>
         <p className="home__description">
           Find the latest news on any topic and save them in your personal
@@ -75,13 +79,23 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
                 </div>
               </div>
             )) ||
-            (!newsStoryContext?.articles?.length && (
-              <p>
-                {hasApiError
-                  ? "Sorry, something went wrong during the request. Please try again later."
-                  : "No results found"}
-              </p>
-            ))
+            (!newsStoryContext?.articles?.length &&
+              (hasApiError ? (
+                <p>
+                  Sorry, something went wrong during the request. Please try
+                  again later.
+                </p>
+              ) : (
+                <div className="noResults__container">
+                  <img
+                    className="notfound__image"
+                    src={notfound}
+                    alt="not found image"
+                  ></img>
+                  <h2>Nothing Found</h2>
+                  <p>Sorry, but nothing matched your search terms.</p>
+                </div>
+              )))
           )}
           {storyCount < newsStoryContext?.articles?.length && (
             <button className="showMore__button" onClick={handleShowMoreClick}>
