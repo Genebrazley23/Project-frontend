@@ -1,11 +1,11 @@
 @font-face {
   font-family: "robotoslab400reg";
-  src: url(../../assets/robotoslab400reg.woff);
+  src: url(../../assets/Fonts/robotoslab400reg.woff);
 }
 
 @font-face {
   font-family: "roboto400reg";
-  src: url(../../assets/roboto-400.woff);
+  src: url(../../assets/Fonts/roboto-400.woff);
 }
 
 .home__container {
@@ -41,20 +41,28 @@
   transform: translate(-50%, -50%);
   padding-bottom: 288px;
   color: #ffffff;
+  margin-top: 80px;
 }
 
 .home__description {
   font-family: "robotoslab400reg", sans-serif;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 24px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  padding-bottom: 32px;
-  height: 48px;
+  height: 24px;
+  width: 608px;
+  text-wrap: nowrap;
+  margin-top: 32px;
+}
+
+.paragraph-break {
+  display: block;
+  margin-bottom: 1em;
 }
 
 .search__results {
@@ -81,10 +89,17 @@
 .search__results-list {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 14px;
-  padding: 0 40px;
-  margin-bottom: 32px;
+  padding: 60px 102px;
+}
+
+.search__results-title {
+  font-family: "robotoslab400reg", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 80px 104px 60px;
+  font-size: 40px;
+  line-height: 46px;
 }
 
 .search__results-container .news-card {
@@ -103,6 +118,7 @@
   outline: none;
   cursor: pointer;
   font-size: 30px;
+  font-family: "roboto400reg", sans-serif;
 }
 
 .search__input-button {
@@ -175,7 +191,7 @@
   .home__image {
     width: 768px;
     height: 400px;
-    background-color: #d1d2d6;
+    background-color: #86888f;
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
@@ -194,16 +210,73 @@
     font-size: 18px;
     width: 452px;
     height: 40px;
+    text-wrap: wrap;
+    padding-top: 16px;
+    padding-left: 60px;
   }
+
   .search__input {
     width: 448px;
     height: 56px;
-    margin-top: 296px;
+    margin: 296px 48px 0 48px;
   }
   .search__input-button {
     margin-top: 325px;
     width: 160px;
     height: 58px;
+  }
+
+  .search__results-title {
+    padding: 40px 40px 32px;
+  }
+
+  .about__details-container {
+    margin-top: -58px;
+  }
+
+  .about__image {
+    width: 232px;
+    height: 232px;
+    margin-left: 40px;
+    margin-bottom: 61px;
+  }
+  .about__title {
+    width: 424px;
+    height: 34px;
+    line-height: 40px;
+  }
+
+  .about__description {
+    width: 424px;
+  }
+
+  .search__results {
+    width: 768px;
+  }
+
+  .search__results-list {
+    padding: 32px 40px;
+    gap: 8px;
+  }
+  .showMore__button {
+    margin-bottom: 32px;
+    width: 224px;
+  }
+
+  .news-card__content {
+    width: 224px;
+    height: 420px;
+  }
+
+  .news-card__title {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  .news-card__source {
+    padding: 12px 16px;
+    line-height: 22px;
+    letter-spacing: 0.4px;
   }
 }
 
@@ -219,16 +292,10 @@
     margin-top: 0;
   }
   .home__title {
-    font-family: "robotoslab400reg", sans-serif;
-    font-weight: 400;
     font-size: 36px;
     line-height: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding-bottom: 288px;
-    color: #ffffff;
+    padding-bottom: 370px;
+    padding-top: 80px;
     width: 285px;
   }
 
@@ -248,6 +315,16 @@
     width: 288px;
   }
 
+  .search__results-container {
+    padding-top: 124px;
+  }
+
+  .search__results-title {
+    padding: 32px 16px 0;
+    font-size: 30px;
+    line-height: 34px;
+  }
+
   .search__input {
     width: 288px;
     height: 56px;
@@ -256,9 +333,8 @@
     border-radius: 100px;
     border: 1px;
     margin-top: 307px;
-    margin-bottom: 80px;
+    margin-bottom: 32px;
     outline: none;
-    cursor: pointer;
     font-size: 30px;
   }
 
@@ -283,11 +359,15 @@
     gap: 14px;
     flex-direction: column;
     align-items: center;
+    padding: 0 16px;
   }
   .about__container {
     flex-direction: column;
+    padding: 0 16px;
+  }
 
-    padding: 0 10px;
+  .about__title {
+    margin: 24px 16px;
   }
 
   .about__description {
@@ -295,6 +375,7 @@
     font-size: 18px;
     line-height: 24px;
     width: 95%;
+    padding: 0 16px 128px;
   }
 
   .about__details-container {
@@ -303,8 +384,8 @@
   }
 
   .about__image {
-    width: 300px;
-    height: 300px;
+    width: 272px;
+    height: 272px;
     border-radius: 1000px;
     margin: 0;
     margin-top: 32px;

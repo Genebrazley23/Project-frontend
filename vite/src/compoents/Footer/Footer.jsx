@@ -25,12 +25,14 @@ const Footer = () => {
           <a
             href="https://github.com"
             onClick={() => console.log("Github link clicked")}
+            target="_blank"
           >
             <img src={github} alt="Github Image" className="github__image" />
           </a>
           <a
             href="https://www.facebook.com"
             onClick={() => console.log("Facebook link clicked")}
+            target="_blank"
           >
             <img src={fb} alt="facebook Image" className="fb__image" />
           </a>

@@ -111,6 +111,7 @@ function App() {
           handleSignInBtnClick={showLoginForm}
           handleLogout={handleLogout}
           headerTheme={headerTheme}
+          isHomeUnderlined={true}
         />
         <Routes>
           <Route

@@ -5,7 +5,7 @@ import "./Home.css";
 import Preloader from "../Preloader/preloader";
 import NewsCard from "../NewsCard/NewsCard";
 import aboutImage from "../../assets/Aboutimage.jpeg";
-import Search from "../SearchForm/Search";
+
 import Footer from "../Footer/Footer";
 import notfound from "../../assets/notfound.png";
 
@@ -20,7 +20,7 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
     setQuery(event.target.value);
   };
 
-  const handleSreachClick = () => {
+  const handleSearchClick = () => {
     setStoryCount(3);
     setHasSearched(true);
     setIsLoading(true);
@@ -28,21 +28,20 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
   };
 
   const handleShowMoreClick = () => {
-    setStoryCount((p) => p + 3);
-    console.log("show more clicked");
+    setStoryCount((prevCount) => prevCount + 3);
   };
 
   useEffect(() => {
     setHeaderTheme("header__light");
-  }, []);
+  }, [setHeaderTheme]);
 
   return (
-    <div className="home__container">
-      <div className="home__topHalf">
+    <main className="home__container">
+      <section className="home__topHalf">
         <div
           style={{ backgroundImage: `url(${Homeimage})` }}
           className="home__image"
-        ></div>
+        />
         <h1 className="home__title">What's going on in the world ?</h1>
         <p className="home__description">
           Find the latest news on any topic and save them in your personal
@@ -52,59 +51,56 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
           <input
             type="text"
             className="search__input"
+            value={query}
             onChange={handleQueryChange}
           />
-          <button className="search__input-button" onClick={handleSreachClick}>
+          <button className="search__input-button" onClick={handleSearchClick}>
             <span className="search__input-button-icon">Search</span>
           </button>
         </div>
-      </div>
+      </section>
       {hasSearched && (
-        <div className="search__results">
+        <section className="search__results">
+          <h1 className="search__results-title">Search results</h1>
           {isLoading ? (
             <Preloader text="Loading..." />
-          ) : (
-            (newsStoryContext?.articles?.length && (
-              <div className="search__results-container">
-                <div>
-                  <Search />
-                </div>
-                <div className="search__results-list">
-                  {newsStoryContext?.articles &&
-                    newsStoryContext.articles
-                      .slice(0, storyCount)
-                      .map((article, index) => (
-                        <NewsCard news={article} key={index} index={index} />
-                      ))}
-                </div>
+          ) : newsStoryContext.articles?.length ? (
+            <div className="search__results-container">
+              <div className="search__results-list">
+                {newsStoryContext.articles
+                  .slice(0, storyCount)
+                  .map((article, index) => (
+                    <NewsCard key={index} news={article} />
+                  ))}
               </div>
-            )) ||
-            (!newsStoryContext?.articles?.length &&
-              (hasApiError ? (
-                <p>
-                  Sorry, something went wrong during the request. Please try
-                  again later.
-                </p>
-              ) : (
-                <div className="noResults__container">
-                  <img
-                    className="notfound__image"
-                    src={notfound}
-                    alt="not found image"
-                  ></img>
-                  <h2>Nothing Found</h2>
-                  <p>Sorry, but nothing matched your search terms.</p>
-                </div>
-              )))
+              {storyCount < newsStoryContext.articles.length && (
+                <button
+                  className="showMore__button"
+                  onClick={handleShowMoreClick}
+                >
+                  <span className="showMore__button-text">Show more</span>
+                </button>
+              )}
+            </div>
+          ) : hasApiError ? (
+            <h3>
+              Sorry, something went wrong during the request. Please try again
+              later.
+            </h3>
+          ) : (
+            <div className="noResults__container">
+              <img
+                className="notfound__image"
+                src={notfound}
+                alt="not found image"
+              />
+              <h2>Nothing Found</h2>
+              <h3>Sorry, but nothing matched your search terms.</h3>
+            </div>
           )}
-          {storyCount < newsStoryContext?.articles?.length && (
-            <button className="showMore__button" onClick={handleShowMoreClick}>
-              <span className="showMore__button-text">Show more</span>
-            </button>
-          )}
-        </div>
+        </section>
       )}
-      <div className="about__container">
+      <section className="about__container">
         <div className="about__image-container">
           <img src={aboutImage} alt="about Image" className="about__image" />
         </div>
@@ -113,16 +109,14 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
           <p className="about__description">
             This block describes the project author. Here you should indicate
             your name, what you do, and which development technologies you know.
-            <br></br> <br></br>
+            <span className="paragraph-break"></span>
             You can also talk about your experience with TripleTen, what you
             learned there, and how you can help potential customers.
           </p>
         </div>
-      </div>
-      <div>
-        <Footer />
-      </div>
-    </div>
+      </section>
+      <Footer />
+    </main>
   );
 };
 
