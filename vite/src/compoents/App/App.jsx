@@ -6,12 +6,13 @@ import Home from "../Home/Home";
 import SaveNews from "../SaveNews/SaveNews";
 import sampleNewsResponse from "/public/SampleNewsResponse.json";
 import LoginModal from "../LoginModal/LoginModal.jsx";
-import RegisterModal from "../Modal/RegisterModal.jsx";
+import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import { newsApiBaseUrl } from "../../utils/constants.js";
 import Header from "../Header/Header.jsx";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import dataLoader from "../../utils/data";
 import Footer from "../Footer/Footer";
+import RegistrationSuccessfullModal from "../RegistrationSuccessfulModal/RegistrationSuccessfulModal.jsx";
 
 function App() {
   const [newsResponse, setnewsResponse] = useState(null);
@@ -70,16 +71,28 @@ function App() {
     setActiveModal("register");
   };
 
+  const signup = (email, password) => {
+    /* return { token: "faketoken", user: { email: email } };*/
+    return new Promise((resolve) => {
+      console.log("signup", email, password);
+      resolve({ successful: true });
+    });
+  };
+
   const handleRegister = (name, avatar, email, password) => {
     signup(name, avatar, email, password)
       .then((res) => {
-        closeModal();
+        setActiveModal("register__successful");
       })
       .catch((error) => console.error(error));
   };
 
   const closeModal = () => {
     setActiveModal("");
+  };
+
+  const onSigninClick = () => {
+    showLoginForm();
   };
 
   const keydown = (e) => {
@@ -98,6 +111,7 @@ function App() {
           handleSignInBtnClick={showLoginForm}
           handleLogout={handleLogout}
           headerTheme={headerTheme}
+          isHomeUnderlined={true}
         />
         <Routes>
           <Route
@@ -129,6 +143,13 @@ function App() {
             onCloseModal={closeModal}
             onRegister={handleRegister}
             onSignClick={showLoginForm}
+          />
+        )}
+        {activeModal === "register__successful" && (
+          <RegistrationSuccessfullModal
+            isOpen={true}
+            onCloseModal={closeModal}
+            onSigninClick={onSigninClick}
           />
         )}
       </NewsStoryContext.Provider>

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "robotoslab400reg";
-  src: url(../../assets/robotoslab400reg.woff);
+  src: url(../../assets/Fonts/robotoslab400reg.woff);
 }
 
 .saved-card__content {
@@ -67,6 +67,8 @@
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .delete__icon {
@@ -93,9 +95,10 @@
 }
 
 .delete__button:hover::after {
+  content: "Remove from saved";
   position: absolute;
-  top: 0px;
-  right: -37px;
+  top: 2px;
+  right: -30px;
   transform: translateX(-50%);
   background-color: white;
   color: black;
@@ -105,6 +108,11 @@
   white-space: nowrap;
   z-index: 10;
   text-align: center;
+}
+
+.delete__icon:hover {
+  cursor: pointer;
+  filter: invert(1);
 }
 
 .showMore__button {
@@ -118,6 +126,11 @@
   cursor: pointer;
   margin: auto;
   display: block;
+}
+
+.showMore__button:hover {
+  background-color: #e8e8e8;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 880px) {

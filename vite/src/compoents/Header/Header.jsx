@@ -11,6 +11,7 @@ function Header({
   handleSignUpBtnClick,
   handleLogout,
   headerTheme,
+  isHomeUnderlined,
 }) {
   const currentUser = useContext(CurrentUserContext);
 
@@ -46,47 +47,82 @@ function Header({
               <img src={closeButton} alt="close"></img>
             </button>
             <div className="header__top-menu ">NewsExplorer</div>
-            <div className="header__menu-title ">Home</div>
-            <button className="header__menu-signin" onClick={handleSignClick}>
-              Sign in
-            </button>
+            <div className="header__page-title underlined ">Home</div>
+            {currentUser && (
+              <div
+                className={`header__page-title ${
+                  isHomeUnderlined ? "" : "underlined"
+                }`}
+              >
+                <Link to="/saveNews" className="no-decoration">
+                  Saved Articles
+                </Link>
+              </div>
+            )}
+            {currentUser && (
+              <button
+                onClick={handleLogout}
+                className="mobile__hidden logout__button "
+              >
+                <div className="header__user-container">
+                  <p className="header__username">{currentUser?.name}</p>
+                  <img
+                    src={backbutton}
+                    alt="back"
+                    className="header__back-button"
+                  />
+                </div>
+              </button>
+            )}
+            {!currentUser && (
+              <button className="header__menu-signin" onClick={handleSignClick}>
+                Sign in
+              </button>
+            )}
           </div>
         </div>
       )}
       <div className="header__title">NewsExplorer</div>
       <div className="header__spacer"></div>
-      <Link to="/" className="mobile__hidden no-decoration">
-        <div className="header__page-title mobile__hidden">Home</div>
-      </Link>
-      {currentUser && (
-        <Link to="/saveNews" className="mobile__hidden no-decoration">
-          <div className="header__page-title mobile__hidden">
-            Saved Articles
-          </div>
-        </Link>
-      )}
-      {currentUser && (
-        <button
-          onClick={handleLogout}
-          className="mobile__hidden logout__button "
+      <div className="header__links">
+        <div
+          className={`header__page-title mobile__hidden ${
+            isHomeUnderlined ? "underlined" : ""
+          }`}
         >
-          <div className="header__user-container">
-            <p className="header__username">{currentUser?.name}</p>
-            <img src={backbutton} alt="back" className="header__back-button" />
-          </div>
-        </button>
-      )}
+          <Link to="/" className="mobile__hidden no-decoration">
+            Home
+          </Link>
+        </div>
 
-      {!currentUser && (
-        <>
-          <button
-            className="header__signin mobile__hidden"
-            onClick={handleSignInBtnClick}
+        {currentUser && (
+          <div
+            className={`header__page-title mobile__hidden ${
+              isHomeUnderlined ? "" : "underlined"
+            }`}
           >
-            Sign in
+            <Link to="/saveNews" className="mobile__hidden no-decoration">
+              Saved Articles
+            </Link>
+          </div>
+        )}
+      </div>
+      {currentUser && (
+        <div>
+          <button
+            onClick={handleLogout}
+            className="mobile__hidden logout__button "
+          >
+            <div className="header__user-container">
+              <p className="header__username">{currentUser?.name}</p>
+              <img
+                src={backbutton}
+                alt="back"
+                className="header__back-button"
+              />
+            </div>
           </button>
           <div>
-            {" "}
             <button
               className="header__menu desktop__hidden"
               onClick={handleMenuBtnClick}
@@ -94,7 +130,26 @@ function Header({
               =
             </button>
           </div>
-        </>
+        </div>
+      )}
+
+      {!currentUser && (
+        <div>
+          <button
+            className="header__signin mobile__hidden"
+            onClick={handleSignInBtnClick}
+          >
+            Sign in
+          </button>
+          <div>
+            <button
+              className="header__menu desktop__hidden"
+              onClick={handleMenuBtnClick}
+            >
+              =
+            </button>
+          </div>
+        </div>
       )}
     </header>
   );

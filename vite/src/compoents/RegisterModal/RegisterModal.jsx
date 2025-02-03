@@ -6,15 +6,14 @@ import "./RegisterModal.css";
 const RegisterModal = ({ isOpen, onRegister, onCloseModal, onSignClick }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [name, setName] = useState("");
-  const [avatarUrl, setAvatarUrl] = useState("");
+
+  const checkEmailAvailability = (email) => {
+    return true;
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
+
     if (!checkEmailAvailability(email)) {
       alert("This email is not available");
       return;
@@ -24,9 +23,7 @@ const RegisterModal = ({ isOpen, onRegister, onCloseModal, onSignClick }) => {
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
-  const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
   const handleNameChange = (e) => setName(e.target.value);
-  const handleAvatarUrlChange = (e) => setAvatarUrl(e.target.value);
   const signIn = (
     <button className="modal__submit-signup" onClick={onSignClick}>
       or <span className="modal__signup-text">Sign In</span>

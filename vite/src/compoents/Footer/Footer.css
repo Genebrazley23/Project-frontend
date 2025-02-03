@@ -1,6 +1,6 @@
 @font-face {
   font-family: "roboto400reg";
-  src: url(../../assets/roboto-400.woff);
+  src: url(../../assets/Fonts/roboto-400.woff);
 }
 
 .footer__container {
@@ -13,7 +13,6 @@
   text-align: center;
   padding: 10px 0;
   color: #555;
-  margin-top: 80px;
 }
 
 .footer__text {
@@ -68,7 +67,25 @@
   padding: 28px 24px 28px 0;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (min-width: 400px) and (max-width: 880px) {
+  footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer {
+    padding: 0;
+    width: 768px;
+  }
+  .footer__text {
+    padding-left: 40px;
+  }
+  .fb__image {
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 400px) {
   .footer {
   }
 

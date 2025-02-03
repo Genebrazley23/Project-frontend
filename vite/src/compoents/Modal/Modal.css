@@ -159,7 +159,30 @@
 }
 
 @media screen and (max-width: 400px) {
+  .modal {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
   .modal__content {
+    border-radius: 16px;
+    background-color: white;
+    padding: 28px 28px 36px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 56px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(0) translateY(0);
     min-width: 300px;
+  }
+  .modal__background {
+    opacity: 1;
+  }
+
+  .modal__close {
+    top: -43px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
   }
 }
