@@ -48,9 +48,37 @@ function Header({
             </button>
             <div className="header__top-menu ">NewsExplorer</div>
             <div className="header__page-title underlined ">Home</div>
-            <button className="header__menu-signin" onClick={handleSignClick}>
-              Sign in
-            </button>
+            {currentUser && (
+              <div
+                className={`header__page-title ${
+                  isHomeUnderlined ? "" : "underlined"
+                }`}
+              >
+                <Link to="/saveNews" className="no-decoration">
+                  Saved Articles
+                </Link>
+              </div>
+            )}
+            {currentUser && (
+              <button
+                onClick={handleLogout}
+                className="mobile__hidden logout__button "
+              >
+                <div className="header__user-container">
+                  <p className="header__username">{currentUser?.name}</p>
+                  <img
+                    src={backbutton}
+                    alt="back"
+                    className="header__back-button"
+                  />
+                </div>
+              </button>
+            )}
+            {!currentUser && (
+              <button className="header__menu-signin" onClick={handleSignClick}>
+                Sign in
+              </button>
+            )}
           </div>
         </div>
       )}
@@ -94,6 +122,14 @@ function Header({
               />
             </div>
           </button>
+          <div>
+            <button
+              className="header__menu desktop__hidden"
+              onClick={handleMenuBtnClick}
+            >
+              =
+            </button>
+          </div>
         </div>
       )}
 
@@ -106,7 +142,6 @@ function Header({
             Sign in
           </button>
           <div>
-            {" "}
             <button
               className="header__menu desktop__hidden"
               onClick={handleMenuBtnClick}
