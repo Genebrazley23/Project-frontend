@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 import fb from "../../assets/fb.png";
 import github from "../../assets/github.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -10,7 +11,9 @@ const Footer = () => {
         <p className="footer__text">©2024 Supersite, Powered by News API</p>
         <div className="footer__links">
           <div className="footer__links__container">
-            <p className=" home__link">Home</p>
+            <Link to="/" className="home__link">
+              Home
+            </Link>
             <p className="tripleten__link">
               <a
                 className="tripleten__hyperlink"

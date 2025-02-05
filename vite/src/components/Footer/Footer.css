@@ -39,6 +39,9 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
+  text-decoration: none;
+  margin-top: 17px;
+  padding: 0;
 }
 
 .tripleten__link {

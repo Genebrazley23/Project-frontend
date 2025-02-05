@@ -101,7 +101,10 @@ function Header({
               isHomeUnderlined ? "" : "underlined"
             }`}
           >
-            <Link to="/saveNews" className="mobile__hidden no-decoration">
+            <Link
+              to="/saveNews"
+              className="mobile__hidden no-decoration underlined"
+            >
               Saved Articles
             </Link>
           </div>

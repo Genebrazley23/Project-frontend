@@ -18,6 +18,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: "roboto400reg", sans-serif;
 }
 
 .home__image {
@@ -119,6 +120,7 @@
   cursor: pointer;
   font-size: 30px;
   font-family: "roboto400reg", sans-serif;
+  padding-left: 20px;
 }
 
 .search__input-button {
@@ -177,6 +179,7 @@
   line-height: 24px;
   text-align: start;
   width: 80%;
+  margin-bottom: -111px;
 }
 
 .about__image {

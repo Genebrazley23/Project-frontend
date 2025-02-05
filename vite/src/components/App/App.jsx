@@ -1,17 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
-import { NewsStoryContext } from "../../context/NewsStoryContext";
+import { NewsStoryContext } from "../../context/NewsStoryContext.js";
 import "./App.css";
-import Home from "../Home/Home";
-import SaveNews from "../SaveNews/SaveNews";
+import Home from "../Home/Home.jsx";
+import SaveNews from "../SaveNews/SaveNews.jsx";
 import sampleNewsResponse from "/public/SampleNewsResponse.json";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import { newsApiBaseUrl } from "../../utils/constants.js";
 import Header from "../Header/Header.jsx";
-import { CurrentUserContext } from "../../context/CurrentUserContext";
-import dataLoader from "../../utils/data";
-import Footer from "../Footer/Footer";
+import { CurrentUserContext } from "../../context/CurrentUserContext.js";
+import dataLoader from "../../utils/data.js";
+import Footer from "../Footer/Footer.jsx";
 import RegistrationSuccessfullModal from "../RegistrationSuccessfulModal/RegistrationSuccessfulModal.jsx";
 
 function App() {
