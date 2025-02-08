@@ -1,27 +1,20 @@
 import "./Header.css";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useContext, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import closeButton from "../../assets/Closeicon.png";
-import NewsExplorer from "../../assets/NewsExplorer.png";
-import { Link } from "react-router-dom";
 import backbutton from "../../assets/back.png";
 
-function Header({
-  handleSignInBtnClick,
-  handleSignUpBtnClick,
-  handleLogout,
-  headerTheme,
-  isHomeUnderlined,
-}) {
+function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
   const currentUser = useContext(CurrentUserContext);
-
   const [showMenuBtn, setShowMenuBtn] = useState(false);
+  const location = useLocation();
+
+  const isHomeUnderlined = location.pathname === "/";
+  const isSavedNewsUnderlined = location.pathname === "/saveNews";
 
   function handleClose() {
-    console.log("handleClose called");
-    console.log("showMenuBtn:", showMenuBtn);
     setShowMenuBtn(false);
-    console.log("showMenuBtn after setting to false:", showMenuBtn);
   }
 
   function handleMenuBtnClick() {
@@ -37,21 +30,24 @@ function Header({
     <header className={`header ${headerTheme}`}>
       {showMenuBtn && (
         <div className="header__menu-overlay">
-          {" "}
           <div className="menu__container">
-            <button
-              onClick={() => handleClose()}
-              type="button"
-              className="menu__close"
-            >
+            <button onClick={handleClose} type="button" className="menu__close">
               <img src={closeButton} alt="close"></img>
             </button>
-            <div className="header__top-menu ">NewsExplorer</div>
-            <div className="header__page-title underlined ">Home</div>
+            <div className="header__top-menu">NewsExplorer</div>
+            <div
+              className={`header__page-title ${
+                isHomeUnderlined ? "underlined" : ""
+              }`}
+            >
+              <Link to="/" className="no-decoration">
+                Home
+              </Link>
+            </div>
             {currentUser && (
               <div
                 className={`header__page-title ${
-                  isHomeUnderlined ? "" : "underlined"
+                  isSavedNewsUnderlined ? "underlined" : ""
                 }`}
               >
                 <Link to="/saveNews" className="no-decoration">
@@ -59,10 +55,10 @@ function Header({
                 </Link>
               </div>
             )}
-            {currentUser && (
+            {currentUser ? (
               <button
                 onClick={handleLogout}
-                className="mobile__hidden logout__button "
+                className="mobile__hidden logout__button"
               >
                 <div className="header__user-container">
                   <p className="header__username">{currentUser?.name}</p>
@@ -73,8 +69,7 @@ function Header({
                   />
                 </div>
               </button>
-            )}
-            {!currentUser && (
+            ) : (
               <button className="header__menu-signin" onClick={handleSignClick}>
                 Sign in
               </button>
@@ -87,7 +82,7 @@ function Header({
       <div className="header__links">
         <div
           className={`header__page-title mobile__hidden ${
-            isHomeUnderlined ? "underlined" : ""
+            isHomeUnderlined ? "home-underlined" : ""
           }`}
         >
           <Link to="/" className="mobile__hidden no-decoration">
@@ -98,7 +93,7 @@ function Header({
         {currentUser && (
           <div
             className={`header__page-title mobile__hidden ${
-              isHomeUnderlined ? "" : "underlined"
+              isSavedNewsUnderlined ? "saved-articles-underlined" : ""
             }`}
           >
             <Link to="/saveNews" className="mobile__hidden no-decoration">
@@ -107,11 +102,11 @@ function Header({
           </div>
         )}
       </div>
-      {currentUser && (
+      {currentUser ? (
         <div>
           <button
             onClick={handleLogout}
-            className="mobile__hidden logout__button "
+            className="mobile__hidden logout__button"
           >
             <div className="header__user-container">
               <p className="header__username">{currentUser?.name}</p>
@@ -122,18 +117,14 @@ function Header({
               />
             </div>
           </button>
-          <div>
-            <button
-              className="header__menu desktop__hidden"
-              onClick={handleMenuBtnClick}
-            >
-              =
-            </button>
-          </div>
+          <button
+            className="header__menu desktop__hidden"
+            onClick={handleMenuBtnClick}
+          >
+            =
+          </button>
         </div>
-      )}
-
-      {!currentUser && (
+      ) : (
         <div>
           <button
             className="header__signin mobile__hidden"
@@ -141,17 +132,16 @@ function Header({
           >
             Sign in
           </button>
-          <div>
-            <button
-              className="header__menu desktop__hidden"
-              onClick={handleMenuBtnClick}
-            >
-              =
-            </button>
-          </div>
+          <button
+            className="header__menu desktop__hidden"
+            onClick={handleMenuBtnClick}
+          >
+            =
+          </button>
         </div>
       )}
     </header>
   );
 }
+
 export default Header;

@@ -6,7 +6,7 @@ function Modal({ handleCloseModal, title, customClass, children }) {
     e.preventDefault();
     handleCloseModal();
   }
-
+  console.log("dpmqwomsaomeoqmxas ", customClass);
   return (
     <div className="modal__background" onClick={handleClose}>
       <div className={"modal " + (customClass || "")}>

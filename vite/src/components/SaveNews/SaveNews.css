@@ -55,3 +55,10 @@
   left: 20px;
   position: absolute;
 }
+
+@media (min-width: 400px) and (max-width: 767px) {
+  .saved-news {
+    overflow-y: scroll;
+    height: calc(100vh - 100px);
+  }
+}
