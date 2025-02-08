@@ -19,7 +19,7 @@ const RegistrationSuccessfullModal = ({
       title="Registration successfully completed!"
       buttonText="Sign In"
       handleCloseModal={onCloseModal}
-      className="modal__registration-successfull"
+      customClass="modal__registration-successfull"
     >
       {signinButton}
     </Modal>

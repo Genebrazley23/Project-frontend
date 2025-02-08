@@ -90,6 +90,7 @@
 
 @media screen and (max-width: 400px) {
   .footer {
+    padding: 128px 0 0;
   }
 
   .footer__links__container {

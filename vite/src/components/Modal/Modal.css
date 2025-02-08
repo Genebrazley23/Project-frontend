@@ -133,6 +133,7 @@
 
 .modal__submit:hover {
   background-color: #2f71e5;
+  cursor: pointer;
 }
 
 .modal__label {
