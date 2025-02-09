@@ -71,9 +71,6 @@
   background: #f6f4f4;
 }
 
-.search__results-container {
-}
-
 .noResults__container {
   margin: auto;
   display: flex;
@@ -281,8 +278,6 @@
     line-height: 22px;
     letter-spacing: 0.4px;
   }
-
-
 }
 
 @media screen and (max-width: 400px) {
