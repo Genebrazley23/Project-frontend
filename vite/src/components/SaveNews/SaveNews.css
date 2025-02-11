@@ -18,7 +18,7 @@
   font-size: 18px;
   line-height: 24px;
   color: #1a1b2280;
-  padding-top: 40px;
+  padding-top: 120px;
   padding-left: 104px;
 }
 .saveNews__subtitle {
@@ -35,8 +35,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  margin-bottom: 30px;
-  margin-left: 104px;
+  margin: 30px 104px 56px;
 }
 
 .saveNews__keyword-description {

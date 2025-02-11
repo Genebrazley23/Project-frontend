@@ -150,7 +150,7 @@
 
 @media screen and (min-width: 400px) and (max-width: 880px) {
   .header {
-    width: 768px;
+    max-width: 880px;
     height: 66px;
   }
   .header__menu {

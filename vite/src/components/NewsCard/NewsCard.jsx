@@ -27,7 +27,7 @@ function NewsCard({ news, isLoggedIn, index }) {
   console.log("oeownxonw", news.urlToImage);
 
   return (
-    <div className="news-card">
+    <div className="news-card card">
       <div className="news-card__image-container">
         <img
           className="news-card__image"

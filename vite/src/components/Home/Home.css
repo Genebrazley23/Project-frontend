@@ -13,17 +13,15 @@
   width: 100%;
 }
 
-.search__container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "roboto400reg", sans-serif;
+.home__content {
+  margin: 0 auto;
+  display: flex;
+  max-width: 606px;
+  flex-direction: column;
+  padding-bottom: 80px;
 }
 
-.home__image {
-  width: 100%;
-  height: 568px;
+.home__topHalf {
   background-color: #686a6f;
   background-blend-mode: multiply;
   background-size: cover;
@@ -31,34 +29,40 @@
   background-repeat: no-repeat;
 }
 
+.search__container {
+  font-family: "roboto400reg", sans-serif;
+  display: flex;
+  position: relative;
+  margin-top: 88px;
+}
+
+.home__image {
+  width: 100%;
+  height: 568px;
+}
+
 .home__title {
   font-family: "robotoslab400reg", sans-serif;
   font-weight: 400;
   font-size: 60px;
   line-height: 64px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding-bottom: 288px;
   color: #ffffff;
-  margin-top: 80px;
+  margin-top: 160px;
+  margin-bottom: 0;
 }
 
 .home__description {
   font-family: "robotoslab400reg", sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 24px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
   color: white;
   height: 24px;
   width: 608px;
   text-wrap: nowrap;
   margin-top: 32px;
+  margin-bottom: 0;
 }
 
 .paragraph-break {
@@ -89,6 +93,20 @@
   flex-direction: row;
   gap: 14px;
   padding: 60px 102px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.search__results-list .card {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.search__results-list .news-card {
+  width: 32%;
+  margin-bottom: 20px !important;
 }
 
 .search__results-title {
@@ -100,39 +118,36 @@
   line-height: 46px;
 }
 
-.search__results-container .news-card {
-  width: 32%;
-}
-
 .search__input {
-  width: 608px;
+  width: 100%;
   height: 64px;
   bottom: 30%;
   left: 20%;
   border-radius: 100px;
   border: 1px;
-  margin-top: 432px;
-  margin-bottom: 80px;
   outline: none;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 16px;
   font-family: "roboto400reg", sans-serif;
   padding-left: 20px;
+  line-height: 22px;
+  box-sizing: border-box;
 }
 
 .search__input-button {
   position: absolute;
-  right: 0px;
-  transform: translateY(-50%);
+  right: 0;
+  top: 0;
+
   background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 8px 16px;
   cursor: pointer;
   width: 168px;
   height: 67px;
   border-radius: 100px;
-  margin-top: 465px;
+  right: -1px;
+  top: -1px;
 }
 
 .search__input-button:hover {
@@ -188,6 +203,10 @@
 }
 
 @media screen and (min-width: 400px) and (max-width: 880px) {
+  .home__content {
+    padding-bottom: 0;
+  }
+
   .home__image {
     width: 768px;
     height: 400px;
@@ -202,7 +221,8 @@
     line-height: 40px;
     width: 385px;
     height: 80px;
-    padding-top: 76px;
+    margin-top: 104px;
+    margin-left: 54px;
   }
 
   .home__description {
@@ -211,19 +231,23 @@
     width: 452px;
     height: 40px;
     text-wrap: wrap;
-    padding-top: 16px;
+    margin-top: 16px;
     padding-left: 60px;
+  }
+
+  .search__container {
+    margin-top: 48px;
   }
 
   .search__input {
     width: 448px;
     height: 56px;
-    margin: 296px 48px 0 48px;
+    margin-left: 54px;
   }
   .search__input-button {
-    margin-top: 325px;
     width: 160px;
     height: 58px;
+    right: 99px;
   }
 
   .search__results-title {
@@ -330,7 +354,6 @@
     height: 56px;
     bottom: 30%;
     left: 20%;
-    padding: 0 20px;
     border-radius: 100px;
     border: 1px;
     margin-top: 307px;
@@ -393,7 +416,7 @@
   }
 
   .search__results-container .news-card {
-    width: 90%;
+    width: 100%;
     height: auto;
   }
 }

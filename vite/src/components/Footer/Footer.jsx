@@ -8,36 +8,41 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <p className="footer__text">©2024 Supersite, Powered by News API</p>
+        <h2 className="footer__text">©2024 Supersite, Powered by News API</h2>
         <div className="footer__links">
-          <div className="footer__links__container">
+          <div className="footer__link">
             <Link to="/" className="home__link">
               Home
             </Link>
-            <p className="tripleten__link">
+            <p className="footer__tripleten-link">
               <a
-                className="tripleten__hyperlink"
+                className="footer__tripleten-hyperlink"
                 href="https://www.tripleten.com"
                 onClick={() => console.log("TripleTen link clicked")}
+                target="_blank"
               >
                 TripleTen
               </a>
             </p>
           </div>
-          <div className="spacer"></div>
+          <div className="footer__spacer"></div>
           <a
             href="https://github.com"
             onClick={() => console.log("Github link clicked")}
             target="_blank"
           >
-            <img src={github} alt="Github Image" className="github__image" />
+            <img
+              src={github}
+              alt="Github Image"
+              className="footer__github-image"
+            />
           </a>
           <a
             href="https://www.facebook.com"
             onClick={() => console.log("Facebook link clicked")}
             target="_blank"
           >
-            <img src={fb} alt="facebook Image" className="fb__image" />
+            <img src={fb} alt="facebook Image" className="footer__fb-image" />
           </a>
         </div>
       </div>
