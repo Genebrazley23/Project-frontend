@@ -33,6 +33,9 @@
   width: 100%;
   border-bottom: 1px solid #d1d2d6;
   align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .header__title {

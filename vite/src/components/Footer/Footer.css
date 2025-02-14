@@ -13,6 +13,7 @@
   text-align: center;
   padding: 10px 0;
   color: #555;
+  width: 100vw;
 }
 
 .footer__text {
@@ -78,7 +79,6 @@
   }
   .footer {
     padding: 0;
-    width: 768px;
   }
   .footer__text {
     padding-left: 40px;

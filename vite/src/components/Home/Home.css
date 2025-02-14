@@ -205,10 +205,10 @@
 @media screen and (min-width: 400px) and (max-width: 880px) {
   .home__content {
     padding-bottom: 0;
+    max-width: 452px;
   }
 
   .home__image {
-    width: 768px;
     height: 400px;
     background-color: #86888f;
     background-blend-mode: multiply;
@@ -219,35 +219,38 @@
   .home__title {
     font-size: 36px;
     line-height: 40px;
-    width: 385px;
+    width: 100%;
     height: 80px;
     margin-top: 104px;
-    margin-left: 54px;
+    margin-left: 0;
   }
 
   .home__description {
     line-height: 24px;
     font-size: 18px;
-    width: 452px;
+    width: 100%;
     height: 40px;
     text-wrap: wrap;
     margin-top: 16px;
-    padding-left: 60px;
+    padding-left: 0;
   }
 
   .search__container {
     margin-top: 48px;
+    padding-left: 0;
+    width: 100%;
+    position: relative;
   }
 
   .search__input {
-    width: 448px;
+    width: 100%;
     height: 56px;
-    margin-left: 54px;
+    margin-left: 0;
   }
   .search__input-button {
     width: 160px;
     height: 58px;
-    right: 99px;
+    right: 0;
   }
 
   .search__results-title {
@@ -265,17 +268,11 @@
     margin-bottom: 61px;
   }
   .about__title {
-    width: 424px;
     height: 34px;
     line-height: 40px;
   }
 
   .about__description {
-    width: 424px;
-  }
-
-  .search__results {
-    width: 768px;
   }
 
   .search__results-list {
@@ -306,9 +303,7 @@
 
 @media screen and (max-width: 400px) {
   .home__content {
-    padding-bottom: 0;
-    padding-top: 86px;
-    padding-right: 19px;
+    padding: 86px 19px 0;
   }
 
   .home__image {
@@ -324,8 +319,9 @@
   .home__title {
     font-size: 36px;
     line-height: 40px;
-    width: 285px;
-    margin: 0 auto;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 30px;
   }
 
   .home__description {
@@ -334,14 +330,16 @@
     line-height: 24px;
     color: white;
     height: 72px;
-    width: 288px;
+    width: 100%;
     text-wrap: wrap;
-    padding-left: 16px;
     margin-top: 16px;
   }
 
   .search__container {
-    margin-top: 122px;
+    display: flex;
+    flex-direction: column;
+    margin: 122px auto 32px auto;
+    width: 100%;
   }
 
   .search__results-container {
@@ -355,7 +353,7 @@
   }
 
   .search__input {
-    width: 288px;
+    width: 100%;
     height: 56px;
     bottom: 30%;
     left: 20%;
@@ -364,17 +362,16 @@
     margin-bottom: 32px;
     outline: none;
     font-size: 30px;
-    margin-left: 16px;
   }
 
   .search__input-button {
-    margin-right: 16px;
+    position: static;
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 0px 18px;
     cursor: pointer;
-    width: 288px;
+    width: 100%;
     height: 56px;
     border-radius: 100px;
   }
