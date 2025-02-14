@@ -38,12 +38,11 @@
 .header__title {
   font-family: "roboto700", sans-serif;
   font-weight: 400;
-  size: 20px;
+  font-size: 20px;
   line-height: 24px;
   width: 200px;
-  height: 24px;
   margin-left: 104px;
-  margin-bottom: 5px;
+  margin-top: 30px;
 }
 
 .header__page-title {
