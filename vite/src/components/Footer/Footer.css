@@ -13,6 +13,7 @@
   text-align: center;
   padding: 10px 0;
   color: #555;
+  width: 100vw;
 }
 
 .footer__text {
@@ -23,7 +24,7 @@
   padding-left: 104px;
 }
 
-.footer__links__container {
+.footer__link {
   display: flex;
   flex-direction: row;
 }
@@ -44,7 +45,7 @@
   padding: 0;
 }
 
-.tripleten__link {
+.footer__tripleten-link {
   color: black;
   padding: 0 40px;
   font-family: "roboto400reg", sans-serif;
@@ -53,18 +54,18 @@
   line-height: 24px;
 }
 
-.tripleten__hyperlink {
+.footer__tripleten-hyperlink {
   text-decoration: none;
   color: black;
 }
 
-.fb__image {
+.footer__fb-image {
   width: 20px;
   height: 20px;
   padding: 28px 104px 28px 0;
 }
 
-.github__image {
+.footer__github-image {
   width: 20px;
   height: 20px;
   padding: 28px 24px 28px 0;
@@ -78,12 +79,11 @@
   }
   .footer {
     padding: 0;
-    width: 768px;
   }
   .footer__text {
     padding-left: 40px;
   }
-  .fb__image {
+  .footer__fb-image {
     padding-right: 40px;
   }
 }
@@ -93,7 +93,7 @@
     padding: 128px 0 0;
   }
 
-  .footer__links__container {
+  .footer__link {
     flex-direction: column;
     display: flex;
     align-items: flex-start;
@@ -113,7 +113,7 @@
     padding: 0 16px;
   }
 
-  .tripleten__link {
+  .footer__tripleten-link {
     padding: 0;
   }
 
@@ -125,16 +125,16 @@
     padding-left: 0px;
   }
 
-  .spacer {
+  .footer__spacer {
     flex-grow: 1;
   }
 
-  .fb__image {
+  .footer__fb-image {
     padding: 0;
     padding-top: 20px;
   }
 
-  .github__image {
+  .footer__github-image {
     padding: 20px 24px 0 0;
   }
 }

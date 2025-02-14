@@ -17,7 +17,7 @@ function SavedNewsCard({ news, deleteSaveNews }) {
   }
 
   return (
-    <div className="saved-card">
+    <div className="saved-card card">
       <div className="saved-card__image-container">
         <img
           className="saved-card__image"

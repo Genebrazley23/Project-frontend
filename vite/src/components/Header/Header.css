@@ -33,17 +33,19 @@
   width: 100%;
   border-bottom: 1px solid #d1d2d6;
   align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .header__title {
   font-family: "roboto700", sans-serif;
   font-weight: 400;
-  size: 20px;
+  font-size: 20px;
   line-height: 24px;
   width: 200px;
-  height: 24px;
   margin-left: 104px;
-  margin-bottom: 5px;
+  margin-top: 30px;
 }
 
 .header__page-title {
@@ -150,7 +152,7 @@
 
 @media screen and (min-width: 400px) and (max-width: 880px) {
   .header {
-    width: 768px;
+    max-width: 880px;
     height: 66px;
   }
   .header__menu {
@@ -163,8 +165,8 @@
   }
 
   .header__title {
-    margin-left: 40px;
-    margin-bottom: 9px;
+    margin: 0;
+    padding-left: 40px;
   }
 
   .header__page-title {
