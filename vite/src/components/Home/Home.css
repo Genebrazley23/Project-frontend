@@ -204,7 +204,7 @@
 @media screen and (min-width: 400px) and (max-width: 880px) {
   .home__content {
     padding-bottom: 0;
-    max-width: 453px;
+    max-width: 452px;
   }
 
   .home__image {
