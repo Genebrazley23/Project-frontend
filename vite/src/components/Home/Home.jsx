@@ -99,8 +99,10 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
                 src={notfound}
                 alt="not found image"
               />
-              <h2>Nothing Found</h2>
-              <h3>Sorry, but nothing matched your search terms.</h3>
+              <h2 className="notfound__title">Nothing Found</h2>
+              <h3 className="notfound__description">
+                Sorry, but nothing matched your search terms.
+              </h3>
             </div>
           )}
         </section>

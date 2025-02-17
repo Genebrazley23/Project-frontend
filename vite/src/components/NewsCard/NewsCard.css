@@ -138,7 +138,7 @@
   display: block;
 }
 
-@media screen and (min-width: 400px) and (max-width: 880px) {
+@media screen and (min-width: 550px) and (max-width: 880px) {
   .news-card__date {
     width: 148px;
     height: 24px;
@@ -161,7 +161,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px) {
   .news-card__content {
     background-color: white;
     color: black;

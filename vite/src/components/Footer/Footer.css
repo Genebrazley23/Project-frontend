@@ -71,7 +71,7 @@
   padding: 28px 24px 28px 0;
 }
 
-@media screen and (min-width: 400px) and (max-width: 880px) {
+@media screen and (min-width: 550px) and (max-width: 880px) {
   footer__container {
     display: flex;
     justify-content: space-between;
@@ -88,7 +88,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px) {
   .footer {
     padding: 128px 0 0;
   }

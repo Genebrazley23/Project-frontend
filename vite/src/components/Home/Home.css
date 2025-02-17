@@ -100,7 +100,7 @@
 }
 
 .search__results-list .card {
-  max-width: 400px;
+  max-width: 550px;
   margin: 0 auto;
 }
 
@@ -201,14 +201,31 @@
   height: 464px;
 }
 
-@media screen and (min-width: 400px) and (max-width: 880px) {
+.notfound__title {
+  font-family: "robotoslab400reg", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.notfound__description {
+  font-family: "roboto400reg", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #b6bcbf;
+  line-height: 24px;
+  text-wrap: wrap;
+  margin-top: 16px;
+}
+
+@media screen and (min-width: 550px) and (max-width: 880px) {
   .home__content {
     padding-bottom: 0;
     max-width: 452px;
   }
 
   .home__image {
-    height: 400px;
+    height: 550px;
     background-color: #86888f;
     background-blend-mode: multiply;
     background-size: cover;
@@ -303,7 +320,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px) {
   .home__content {
     padding: 86px 19px 0;
   }
@@ -363,7 +380,7 @@
     border: 1px;
     margin-bottom: 32px;
     outline: none;
-    font-size: 30px;
+    font-size: 16px;
   }
 
   .search__input-button {
@@ -388,7 +405,7 @@
   }
   .about__container {
     flex-direction: column;
-    padding: 0 16px;
+    padding: 0 24px;
   }
 
   .about__title {
@@ -414,6 +431,7 @@
     border-radius: 1000px;
     margin: 0;
     margin-top: 32px;
+    margin-left: 24px;
   }
 
   .search__results-container .news-card {
