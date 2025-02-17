@@ -13,11 +13,11 @@
   src: url(../../assets/Fonts/roboto-500.woff);
 }
 
-.header__light {
+.change__header-light {
   color: #ffffff;
 }
 
-.header__dark {
+.change__header-dark {
   color: black;
 }
 
@@ -38,6 +38,10 @@
   right: 0;
 }
 
+.header__page-title a {
+  margin-top: 8px;
+}
+
 .header__title {
   font-family: "roboto700", sans-serif;
   font-weight: 400;
@@ -53,15 +57,15 @@
   font-family: "roboto500", sans-serif;
   font-weight: 500;
   font-size: 18px;
-  line-height: 18px;
-  margin-right: 64px;
-  padding: 6px;
+  margin-right: 6px;
+  margin-top: -2px;
+  padding: 0 12px;
   white-space: nowrap;
-  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
+  height: 82px;
+  border-bottom: 4px solid transparent;
 }
 
 .header__links {
@@ -107,6 +111,7 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1000;
+  width: 100vw;
 }
 
 .header__username {
@@ -122,7 +127,7 @@
   filter: invert(1);
 }
 
-.header__dark .logout__button {
+.change__header-dark .logout__button {
   border: 1px solid #d1d2d6;
 }
 
@@ -142,7 +147,6 @@
 
 .home-underlined {
   border-bottom: 4px solid #ffffff;
-  width: 68px;
 }
 
 .saved-articles-underlined {
@@ -172,6 +176,7 @@
   .header__page-title {
     margin-right: 16px;
     margin-bottom: 6px;
+    height: 72px;
   }
 
   .home__description {
@@ -186,8 +191,8 @@
     margin: 7px;
   }
 
-  .home-underlined {
-    height: 58px;
+  .desktop__hidden {
+    display: none;
   }
 }
 
@@ -249,7 +254,7 @@
   .menu__container {
     flex-direction: column;
     background-color: #1a1b22;
-
+    padding-bottom: 18px;
     width: 100%;
     color: #ffffff;
   }
@@ -320,9 +325,10 @@
     display: none;
   }
 
-  .menu__container .logout__button.mobile__hidden {
+  .menu__container .logout__button {
     display: block;
-    margin: 16px;
+    margin: 16px auto;
+    width: 90%;
   }
 
   .news-card__title {
@@ -337,10 +343,10 @@
     margin-right: auto;
     padding-left: 16px;
   }
+}
 
-  @media screen and (min-width: 880px) {
-    .desktop__hidden {
-      display: none;
-    }
+@media screen and (min-width: 880px) {
+  .desktop__hidden {
+    display: none;
   }
 }

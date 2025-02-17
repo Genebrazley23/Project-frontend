@@ -8,10 +8,10 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <h2 className="footer__text">©2024 Supersite, Powered by News API</h2>
-        <div className="footer__links">
+        <h2 className="footer__text">2024 Supersite, Powered by News API</h2>
+        <nav className="footer__links">
           <div className="footer__link">
-            <Link to="/" className="home__link">
+            <Link to="/" className="footer__home-link">
               Home
             </Link>
             <p className="footer__tripleten-link">
@@ -44,7 +44,7 @@ const Footer = () => {
           >
             <img src={fb} alt="facebook Image" className="footer__fb-image" />
           </a>
-        </div>
+        </nav>
       </div>
     </footer>
   );

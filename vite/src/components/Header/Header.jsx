@@ -56,10 +56,7 @@ function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
               </div>
             )}
             {currentUser ? (
-              <button
-                onClick={handleLogout}
-                className="mobile__hidden logout__button"
-              >
+              <button onClick={handleLogout} className=" logout__button">
                 <div className="header__user-container">
                   <p className="header__username">{currentUser?.name}</p>
                   <img
@@ -81,22 +78,25 @@ function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
       <div className="header__spacer"></div>
       <div className="header__links">
         <div
-          className={`header__page-title mobile__hidden ${
+          className={`header__page-title header__mobile-hidden ${
             isHomeUnderlined ? "home-underlined" : ""
           }`}
         >
-          <Link to="/" className="mobile__hidden no-decoration">
+          <Link to="/" className="header__mobile-hidden no-decoration">
             Home
           </Link>
         </div>
 
         {currentUser && (
           <div
-            className={`header__page-title mobile__hidden ${
+            className={`header__page-title header__mobile-hidden ${
               isSavedNewsUnderlined ? "saved-articles-underlined" : ""
             }`}
           >
-            <Link to="/saveNews" className="mobile__hidden no-decoration">
+            <Link
+              to="/saveNews"
+              className="header__mobile-hidden no-decoration"
+            >
               Saved Articles
             </Link>
           </div>
@@ -106,7 +106,7 @@ function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
         <div>
           <button
             onClick={handleLogout}
-            className="mobile__hidden logout__button"
+            className="header__mobile-hidden logout__button"
           >
             <div className="header__user-container">
               <p className="header__username">{currentUser?.name}</p>
@@ -127,7 +127,7 @@ function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
       ) : (
         <div>
           <button
-            className="header__signin mobile__hidden"
+            className="header__signin header__mobile-hidden"
             onClick={handleSignInBtnClick}
           >
             Sign in

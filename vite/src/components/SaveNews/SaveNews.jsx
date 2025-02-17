@@ -34,7 +34,7 @@ const SaveNews = ({ setHeaderTheme }) => {
   }
 
   useEffect(() => {
-    setHeaderTheme("header__dark");
+    setHeaderTheme(".change__header-dark");
   }, []);
 
   useEffect(() => {
@@ -49,8 +49,8 @@ const SaveNews = ({ setHeaderTheme }) => {
   }, []);
 
   return (
-    <section className="saveNews">
-      <header>
+    <main className="saveNews">
+      <section>
         <h1 className="saveNews__title">Saved Articles</h1>
         {currentUser && (
           <p className="saveNews__subtitle">
@@ -65,7 +65,7 @@ const SaveNews = ({ setHeaderTheme }) => {
             </span>
           </p>
         )}
-      </header>
+      </section>
 
       <section className="search__results">
         {isLoading ? (
@@ -94,7 +94,7 @@ const SaveNews = ({ setHeaderTheme }) => {
       </section>
 
       <Footer />
-    </section>
+    </main>
   );
 };
 
