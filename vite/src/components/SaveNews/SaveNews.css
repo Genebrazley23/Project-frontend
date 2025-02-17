@@ -55,9 +55,19 @@
   position: absolute;
 }
 
-@media (min-width: 400px) and (max-width: 767px) {
+.search__results-list li {
+  width: 32%;
+}
+
+@media (min-width: 550px) and (max-width: 880px) {
   .saved-news {
     overflow-y: scroll;
     height: calc(100vh - 100px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .search__results-list li {
+    width: 100%;
   }
 }

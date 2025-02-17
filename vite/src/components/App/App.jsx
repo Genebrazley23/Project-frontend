@@ -20,7 +20,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [hasApiError, setHasApiError] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [headerTheme, setHeaderTheme] = useState("header__light");
+  const [headerTheme, setHeaderTheme] = useState("change__header-light");
 
   const handleLogout = () => {
     setCurrentUser(null);

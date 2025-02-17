@@ -1,5 +1,5 @@
 @media screen and (max-width: 550px) {
-  .mobile__hidden {
-    display: none;
+  .header__mobile-hidden {
+    display: none !important;
   }
 }

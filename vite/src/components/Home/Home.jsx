@@ -5,7 +5,6 @@ import "./Home.css";
 import Preloader from "../Preloader/preloader";
 import NewsCard from "../NewsCard/NewsCard";
 import aboutImage from "../../assets/Aboutimage.jpeg";
-
 import Footer from "../Footer/Footer";
 import notfound from "../../assets/notfound.png";
 
@@ -32,11 +31,11 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
   };
 
   useEffect(() => {
-    setHeaderTheme("header__light");
+    setHeaderTheme("change__header-light");
   }, [setHeaderTheme]);
 
   return (
-    <main className="home__container">
+    <main className="home">
       <section
         className="home__topHalf"
         style={{ backgroundImage: `url(${Homeimage})` }}
@@ -47,7 +46,7 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
             Find the latest news on any topic and save them in your personal
             account.
           </p>
-          <div className="search__container">
+          <div className="search">
             <input
               type="text"
               className="search__input"
@@ -71,13 +70,15 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
             <Preloader text="Loading..." />
           ) : newsStoryContext.articles?.length ? (
             <div className="search__results-container">
-              <div className="search__results-list">
+              <ul className="search__results-list">
                 {newsStoryContext.articles
                   .slice(0, storyCount)
                   .map((article, index) => (
-                    <NewsCard key={index} news={article} />
+                    <li key={index} className="search__results-item">
+                      <NewsCard news={article} />
+                    </li>
                   ))}
-              </div>
+              </ul>
               {storyCount < newsStoryContext.articles.length && (
                 <button
                   className="showMore__button"
@@ -107,7 +108,7 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
           )}
         </section>
       )}
-      <section className="about__container">
+      <section className="about">
         <div className="about__image-container">
           <img src={aboutImage} alt="about Image" className="about__image" />
         </div>

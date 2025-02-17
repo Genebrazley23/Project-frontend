@@ -3,7 +3,7 @@
   src: url(../../assets/Fonts/roboto-900.woff);
 }
 
-.modal {
+.modal__conatiner {
   position: fixed;
   justify-content: center;
   align-items: center;
@@ -169,7 +169,7 @@
 }
 
 @media screen and (max-width: 550px) {
-  .modal {
+  .modal__conatiner {
     background-color: rgba(0, 0, 0, 0.8);
   }
   .modal__content {
@@ -185,7 +185,7 @@
     transform: translateX(0) translateY(0);
     min-width: 300px;
   }
-  .modal__background {
+  .modal {
     opacity: 1;
   }
 
