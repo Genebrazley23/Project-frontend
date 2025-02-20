@@ -27,6 +27,7 @@
 .footer__link {
   display: flex;
   flex-direction: row;
+  list-style: none;
 }
 
 .footer__links {

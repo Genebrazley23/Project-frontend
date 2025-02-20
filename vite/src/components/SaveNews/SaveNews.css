@@ -18,14 +18,14 @@
   font-size: 18px;
   line-height: 24px;
   color: #1a1b2280;
-  padding-top: 120px;
+  padding-top: 40px;
   padding-left: 104px;
 }
 .saveNews__subtitle {
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
-  margin-bottom: 28px;
+  margin-top: 28px;
   margin-left: 104px;
   text-wrap: auto;
 }
@@ -63,6 +63,16 @@
   .saved-news {
     overflow-y: scroll;
     height: calc(100vh - 100px);
+  }
+  .saveNews__subtitle {
+    margin: 16px 0 0 40px;
+  }
+  .saveNews__title {
+    padding-top: 24px;
+    padding-left: 40px;
+  }
+  .saveNews__keyword {
+    margin: 50px 0 32px 16px;
   }
 }
 

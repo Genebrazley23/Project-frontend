@@ -6,10 +6,10 @@ function Modal({ handleCloseModal, title, customClass, children }) {
     e.preventDefault();
     handleCloseModal();
   }
-  console.log("dpmqwomsaomeoqmxas ", customClass);
+
   return (
     <div className="modal" onClick={handleClose}>
-      <div className={"modal__conatiner" + (customClass || "")}>
+      <div className={"modal__container " + (customClass || "")}>
         <div className="modal__content" onClick={(e) => e.stopPropagation()}>
           <h2 className="modal__title">{title}</h2>
           <button
