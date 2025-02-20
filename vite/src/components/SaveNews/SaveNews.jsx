@@ -6,8 +6,9 @@ import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
 import "./SaveNews.css";
 import { Navigate, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
-const SaveNews = ({ setHeaderTheme }) => {
+const SaveNews = ({ handleLogout, showLoginForm }) => {
   const [savedArticles, setSavedArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasApiError, setHasApiError] = useState(false);
@@ -34,10 +35,6 @@ const SaveNews = ({ setHeaderTheme }) => {
   }
 
   useEffect(() => {
-    setHeaderTheme(".change__header-dark");
-  }, []);
-
-  useEffect(() => {
     dataLoader
       .getSavedArticles()
       .then((data) => setSavedArticles(data))
@@ -50,6 +47,13 @@ const SaveNews = ({ setHeaderTheme }) => {
 
   return (
     <main className="saveNews">
+      <Header
+        handleSignInBtnClick={showLoginForm}
+        handleLogout={handleLogout}
+        headerTheme="change__header-dark"
+        isHomeUnderlined={true}
+      />
+
       <section>
         <h1 className="saveNews__title">Saved Articles</h1>
         {currentUser && (
@@ -66,7 +70,6 @@ const SaveNews = ({ setHeaderTheme }) => {
           </p>
         )}
       </section>
-
       <section className="search__results">
         {isLoading ? (
           <Preloader text="Loading..." />
@@ -92,7 +95,6 @@ const SaveNews = ({ setHeaderTheme }) => {
           </p>
         )}
       </section>
-
       <Footer />
     </main>
   );

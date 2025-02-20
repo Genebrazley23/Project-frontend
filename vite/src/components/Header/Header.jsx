@@ -76,32 +76,34 @@ function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
       )}
       <div className="header__title">NewsExplorer</div>
       <div className="header__spacer"></div>
-      <div className="header__links">
-        <div
-          className={`header__page-title header__mobile-hidden ${
-            isHomeUnderlined ? "home-underlined" : ""
-          }`}
-        >
-          <Link to="/" className="header__mobile-hidden no-decoration">
-            Home
-          </Link>
-        </div>
-
-        {currentUser && (
-          <div
+      <nav className="header__links">
+        <ul className="header__link-list">
+          <li
             className={`header__page-title header__mobile-hidden ${
-              isSavedNewsUnderlined ? "saved-articles-underlined" : ""
+              isHomeUnderlined ? "home-underlined" : ""
             }`}
           >
-            <Link
-              to="/saveNews"
-              className="header__mobile-hidden no-decoration"
-            >
-              Saved Articles
+            <Link to="/" className="header__mobile-hidden no-decoration">
+              Home
             </Link>
-          </div>
-        )}
-      </div>
+          </li>
+
+          {currentUser && (
+            <li
+              className={`header__page-title header__mobile-hidden ${
+                isSavedNewsUnderlined ? "saved-articles-underlined" : ""
+              }`}
+            >
+              <Link
+                to="/saveNews"
+                className="header__mobile-hidden no-decoration"
+              >
+                Saved Articles
+              </Link>
+            </li>
+          )}
+        </ul>
+      </nav>
       {currentUser ? (
         <div>
           <button

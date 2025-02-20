@@ -7,8 +7,9 @@ import NewsCard from "../NewsCard/NewsCard";
 import aboutImage from "../../assets/Aboutimage.jpeg";
 import Footer from "../Footer/Footer";
 import notfound from "../../assets/notfound.png";
+import Header from "../Header/Header";
 
-const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
+const Home = ({ handleSearch, hasApiError, showLoginForm, handleLogout }) => {
   const newsStoryContext = useContext(NewsStoryContext);
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -30,16 +31,18 @@ const Home = ({ handleSearch, hasApiError, setHeaderTheme }) => {
     setStoryCount((prevCount) => prevCount + 3);
   };
 
-  useEffect(() => {
-    setHeaderTheme("change__header-light");
-  }, [setHeaderTheme]);
-
   return (
     <main className="home">
       <section
         className="home__topHalf"
         style={{ backgroundImage: `url(${Homeimage})` }}
       >
+        <Header
+          handleSignInBtnClick={showLoginForm}
+          handleLogout={handleLogout}
+          headerTheme="change__header-light"
+          isHomeUnderlined={true}
+        />
         <div className="home__content">
           <h1 className="home__title">What's going on in the world ?</h1>
           <p className="home__description">

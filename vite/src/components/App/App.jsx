@@ -19,12 +19,9 @@ function App() {
   const [activeModal, setActiveModal] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
   const [hasApiError, setHasApiError] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [headerTheme, setHeaderTheme] = useState("change__header-light");
 
   const handleLogout = () => {
     setCurrentUser(null);
-    setIsLoggedIn(false);
   };
 
   const searchNews = (term, onComplete) => {
@@ -49,7 +46,6 @@ function App() {
   };
 
   const signIn = (email, password) => {
-    /* return { token: "faketoken", user: { email: email } };*/
     return new Promise((resolve) => {
       console.log("signin", email, password);
       resolve({ token: "faketoken", user: { email: email, name: "homer" } });
@@ -60,7 +56,7 @@ function App() {
     signIn(email, password)
       .then((res) => {
         localStorage.setItem("jwt", res.token);
-        setIsLoggedIn(true);
+
         setCurrentUser(res.user);
         closeModal();
       })
@@ -107,12 +103,6 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <NewsStoryContext.Provider value={newsResponse}>
-        <Header
-          handleSignInBtnClick={showLoginForm}
-          handleLogout={handleLogout}
-          headerTheme={headerTheme}
-          isHomeUnderlined={true}
-        />
         <Routes>
           <Route
             path="/"
@@ -120,13 +110,19 @@ function App() {
               <Home
                 handleSearch={searchNews}
                 hasApiError={hasApiError}
-                setHeaderTheme={setHeaderTheme}
+                showLoginForm={showLoginForm}
+                handleLogout={handleLogout}
               />
             }
           />
           <Route
             path="saveNews"
-            element={<SaveNews setHeaderTheme={setHeaderTheme} />}
+            element={
+              <SaveNews
+                handleLogout={handleLogout}
+                showLoginForm={showLoginForm}
+              />
+            }
           />
         </Routes>
         {activeModal === "login" && (
