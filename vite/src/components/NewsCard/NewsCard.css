@@ -155,6 +155,7 @@
   .news-card__title {
     margin-left: 16px;
     margin-top: 12px;
+    margin-bottom: 10px;
     font-size: 22px;
     line-height: 24px;
     padding: 0;
@@ -174,6 +175,7 @@
     justify-content: space-between;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    width: 100%;
   }
 
   .news-card {

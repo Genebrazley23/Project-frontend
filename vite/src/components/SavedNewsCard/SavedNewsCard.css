@@ -176,3 +176,10 @@
     margin: 0;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .saved-card__date {
+    font-size: 18px;
+    margin: 16px;
+  }
+}

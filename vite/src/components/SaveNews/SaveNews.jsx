@@ -70,11 +70,11 @@ const SaveNews = ({ handleLogout, showLoginForm }) => {
           </p>
         )}
       </section>
-      <section className="search__results">
+      <section className="results">
         {isLoading ? (
           <Preloader text="Loading..." />
         ) : savedArticles.length ? (
-          <ul className="search__results-list">
+          <ul className="results-list">
             {savedArticles.map((article, index) => (
               <li key={index}>
                 <article>
