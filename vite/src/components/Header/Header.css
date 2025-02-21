@@ -183,6 +183,7 @@
   .header__page-title {
     margin-bottom: 6px;
     margin-left: 16px;
+    margin-right: 16px;
     height: 72px;
   }
 
@@ -200,6 +201,10 @@
 
   .desktop__hidden {
     display: none;
+  }
+  .logout__button {
+    padding: 0;
+    margin: 0;
   }
 }
 
