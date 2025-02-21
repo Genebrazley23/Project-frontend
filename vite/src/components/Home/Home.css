@@ -89,6 +89,8 @@
 }
 
 .results-list {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   gap: 14px;
@@ -98,6 +100,7 @@
   margin: 0 auto;
   max-width: 1440px;
   list-style: none;
+  padding: 62px 0 0 0;
 }
 
 .results-list .card {
@@ -302,13 +305,10 @@
   .results-list {
     padding: 32px 40px;
     gap: 9px;
+    padding: 0;
   }
   .showMore__button {
     margin-bottom: 32px;
-    width: 224px;
-  }
-
-  .news-card__content {
     width: 224px;
   }
 
@@ -404,7 +404,7 @@
     gap: 10px;
     flex-direction: column;
     align-items: center;
-    padding: 0 16px;
+    padding: 24px 16px;
   }
   .about {
     flex-direction: column;
@@ -439,5 +439,12 @@
   .results-container .news-card {
     width: 100%;
     height: auto;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 880px) {
+  .results-list {
+    margin: 0;
+    padding-top: 64px;
   }
 }
