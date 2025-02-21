@@ -13,7 +13,7 @@
   text-align: center;
   padding: 10px 0;
   color: #555;
-  width: 100vw;
+  width: 100%%;
 }
 
 .footer__text {
@@ -98,6 +98,7 @@
     flex-direction: column;
     display: flex;
     align-items: flex-start;
+    padding-left: 16px;
   }
 
   .footer__links {

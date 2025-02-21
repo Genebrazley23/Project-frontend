@@ -13,11 +13,11 @@
   src: url(../../assets/Fonts/roboto-500.woff);
 }
 
-.change__header-light {
+.header-light {
   color: #ffffff;
 }
 
-.change__header-dark {
+.header-dark {
   color: black;
 }
 
@@ -112,7 +112,7 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  width: 100vw;
+  width: 100%;
 }
 
 .header__user {
@@ -133,7 +133,7 @@
   filter: invert(1);
 }
 
-.change__header-dark .logout__button {
+.header-dark .logout__button {
   border: 1px solid #d1d2d6;
 }
 
@@ -177,8 +177,7 @@
   }
 
   .header__title {
-    margin: 0;
-    padding-left: 40px;
+    margin-left: 40px !important;
   }
 
   .header__page-title {
@@ -315,15 +314,15 @@
     border-bottom: none;
   }
   .saveNews__title {
-    padding-left: 16px;
-    padding-top: 8px;
+    padding: 8px 16px 0 !important;
+    margin: 0 !important;
   }
   .saveNews__subtitle {
-    margin: 16px;
+    margin: 16px 0 0 16px !important;
   }
 
   .saveNews__keyword {
-    margin-left: 16px;
+    margin: 50px 16px !important;
   }
 
   .home-underlined {
@@ -338,10 +337,6 @@
     display: block;
     margin: 16px auto;
     width: 90%;
-  }
-
-  .news-card__title {
-    padding-left: 16px;
   }
 
   .news-card__description {

@@ -40,7 +40,7 @@ const Home = ({ handleSearch, hasApiError, showLoginForm, handleLogout }) => {
         <Header
           handleSignInBtnClick={showLoginForm}
           handleLogout={handleLogout}
-          headerTheme="change__header-light"
+          headerTheme="header-light"
           isHomeUnderlined={true}
         />
         <div className="home__content">
@@ -67,29 +67,31 @@ const Home = ({ handleSearch, hasApiError, showLoginForm, handleLogout }) => {
         </div>
       </section>
       {hasSearched && (
-        <section className="search__results">
-          <h2 className="search__results-title">Search results</h2>
+        <section className="results">
           {isLoading ? (
             <Preloader text="Loading..." />
           ) : newsStoryContext.articles?.length ? (
-            <div className="search__results-container">
-              <ul className="search__results-list">
-                {newsStoryContext.articles
-                  .slice(0, storyCount)
-                  .map((article, index) => (
-                    <li key={index} className="search__results-item">
-                      <NewsCard news={article} />
-                    </li>
-                  ))}
-              </ul>
-              {storyCount < newsStoryContext.articles.length && (
-                <button
-                  className="showMore__button"
-                  onClick={handleShowMoreClick}
-                >
-                  <span className="showMore__button-text">Show more</span>
-                </button>
-              )}
+            <div>
+              <h2 className="results-title">Search results</h2>
+              <div className="results-container">
+                <ul className="results-list">
+                  {newsStoryContext.articles
+                    .slice(0, storyCount)
+                    .map((article, index) => (
+                      <li key={index} className="results-item">
+                        <NewsCard news={article} />
+                      </li>
+                    ))}
+                </ul>
+                {storyCount < newsStoryContext.articles.length && (
+                  <button
+                    className="showMore__button"
+                    onClick={handleShowMoreClick}
+                  >
+                    <span className="showMore__button-text">Show more</span>
+                  </button>
+                )}
+              </div>
             </div>
           ) : hasApiError ? (
             <h3>
