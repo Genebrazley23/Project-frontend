@@ -50,7 +50,7 @@ const SaveNews = ({ handleLogout, showLoginForm }) => {
       <Header
         handleSignInBtnClick={showLoginForm}
         handleLogout={handleLogout}
-        headerTheme="change__header-dark"
+        headerTheme="header-dark"
         isHomeUnderlined={true}
       />
 
@@ -74,7 +74,7 @@ const SaveNews = ({ handleLogout, showLoginForm }) => {
         {isLoading ? (
           <Preloader text="Loading..." />
         ) : savedArticles.length ? (
-          <ul className="results-list">
+          <ul className="results__list">
             {savedArticles.map((article, index) => (
               <li key={index}>
                 <article>

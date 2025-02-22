@@ -72,23 +72,23 @@ const Home = ({ handleSearch, hasApiError, showLoginForm, handleLogout }) => {
             <Preloader text="Loading..." />
           ) : newsStoryContext.articles?.length ? (
             <div>
-              <h2 className="results-title">Search results</h2>
-              <div className="results-container">
-                <ul className="results-list">
+              <h2 className="results__title">Search results</h2>
+              <div className="results__container">
+                <ul className="results__list">
                   {newsStoryContext.articles
                     .slice(0, storyCount)
                     .map((article, index) => (
-                      <li key={index} className="results-item">
+                      <li key={index} className="results__item">
                         <NewsCard news={article} />
                       </li>
                     ))}
                 </ul>
                 {storyCount < newsStoryContext.articles.length && (
                   <button
-                    className="showMore__button"
+                    className="results__showMore-button "
                     onClick={handleShowMoreClick}
                   >
-                    <span className="showMore__button-text">Show more</span>
+                    <span className="results__showMore-text">Show more</span>
                   </button>
                 )}
               </div>

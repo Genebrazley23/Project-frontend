@@ -19,6 +19,7 @@
   max-width: 606px;
   flex-direction: column;
   padding-bottom: 80px;
+  margin: 0 auto;
 }
 
 .home__topHalf {
@@ -73,6 +74,8 @@
 .results {
   padding-bottom: 40px;
   background: #f6f4f4;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .noResults__container {
@@ -88,7 +91,7 @@
   height: 82px;
 }
 
-.results-list {
+.results__list {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -103,16 +106,16 @@
   padding: 62px 0 0 0;
 }
 
-.results-list .card {
+.results__list .card {
   max-width: 550px;
   margin: 0 auto;
 }
 
-.results-list .news-card {
+.results__list .news-card {
   margin-bottom: 20px !important;
 }
 
-.results-title {
+.results__title {
   font-family: "robotoslab400reg", sans-serif;
   font-weight: 400;
   margin: 0;
@@ -165,6 +168,8 @@
   position: relative;
   display: flex;
   padding: 80px 0;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .about__details-container {
@@ -278,7 +283,7 @@
     right: 0;
   }
 
-  .results-title {
+  .results__title {
     padding: 40px 40px 32px;
   }
 
@@ -302,12 +307,12 @@
     width: 100%;
   }
 
-  .results-list {
+  .results__list {
     padding: 32px 40px;
     gap: 9px;
     padding: 0;
   }
-  .showMore__button {
+  .results__showMore-button {
     margin-bottom: 32px;
     width: 224px;
   }
@@ -364,11 +369,11 @@
     width: 100%;
   }
 
-  .results-container {
+  .results__container {
     padding-top: 24px;
   }
 
-  .results-title {
+  .results__title {
     padding: 32px 16px 0;
     font-size: 30px;
     line-height: 34px;
@@ -398,7 +403,7 @@
     border-radius: 100px;
   }
 
-  .results-list {
+  .results__list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -436,14 +441,14 @@
     margin-top: 32px;
   }
 
-  .results-container .news-card {
+  .results__container .news-card {
     width: 100%;
     height: auto;
   }
 }
 
 @media screen and (min-width: 550px) and (max-width: 880px) {
-  .results-list {
+  .results__list {
     margin: 0;
     padding-top: 64px;
   }
