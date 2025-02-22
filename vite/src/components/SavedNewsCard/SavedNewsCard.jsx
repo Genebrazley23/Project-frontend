@@ -28,12 +28,12 @@ function SavedNewsCard({ news, deleteSaveNews }) {
         <button
           type="button"
           onClick={handleDeleteButtonClick}
-          className={`delete__button `}
+          className={`saved-card-delete__button `}
           title="Delete"
         >
           {" "}
           <div
-            className="delete__icon"
+            className="saved-card-delete__icon"
             style={{
               backgroundImage: `url(${trashcan})`,
             }}

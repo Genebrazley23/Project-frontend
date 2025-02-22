@@ -91,7 +91,7 @@
 
 @media screen and (max-width: 550px) {
   .footer {
-    padding: 128px 0 0;
+    padding-top: 20px;
   }
 
   .footer__link {
@@ -99,6 +99,9 @@
     display: flex;
     align-items: flex-start;
     padding-left: 16px;
+    padding-top: 0px;
+    padding-bottom: 32px;
+    margin: 0;
   }
 
   .footer__links {

@@ -8,6 +8,11 @@
   src: url(../../assets/Fonts/roboto-700.woff);
 }
 
+.saveNews {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .saveNews__container {
   padding-top: 3em;
 }
@@ -55,7 +60,7 @@
   position: absolute;
 }
 
-.results-list li {
+.results__list li {
   width: 30%;
 }
 
@@ -77,7 +82,7 @@
 }
 
 @media screen and (max-width: 550px) {
-  .results-list li {
+  .results__list li {
     width: 100%;
   }
 }
