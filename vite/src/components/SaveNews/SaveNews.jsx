@@ -55,9 +55,9 @@ const SaveNews = ({ handleLogout, showLoginForm }) => {
       />
 
       <section>
-        <h1 className="saveNews__title">Saved Articles</h1>
+        <h1 className="saveNews__title override-subtitle">Saved Articles</h1>
         {currentUser && (
-          <p className="saveNews__subtitle">
+          <p className="saveNews__subtitle subtitle-margin">
             {currentUser.name}, you have {savedArticles.length} saved articles.
           </p>
         )}
