@@ -177,7 +177,7 @@
   }
 
   .header__title {
-    margin-left: 40px !important;
+    margin-left: 40px;
   }
 
   .header__page-title {
@@ -317,17 +317,6 @@
   }
   .underlined {
     border-bottom: none;
-  }
-  .saveNews__title {
-    padding: 8px 16px 0 !important;
-    margin: 0 !important;
-  }
-  .saveNews__subtitle {
-    margin: 16px 0 0 16px !important;
-  }
-
-  .saveNews__keyword {
-    margin: 50px 16px !important;
   }
 
   .home-underlined {
