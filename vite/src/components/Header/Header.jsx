@@ -56,7 +56,7 @@ function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
               </div>
             )}
             {currentUser ? (
-              <button onClick={handleLogout} className=" logout__button">
+              <button onClick={handleLogout} className=" Header__logout-button">
                 <div className="header__user-container">
                   <p className="header__username">{currentUser?.name}</p>
                   <img
@@ -108,7 +108,7 @@ function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
         <div>
           <button
             onClick={handleLogout}
-            className="header__mobile-hidden logout__button"
+            className="header__mobile-hidden Header__logout-button"
           >
             <div className="header__user-container">
               <p className="header__username">{currentUser?.name}</p>
@@ -120,7 +120,7 @@ function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
             </div>
           </button>
           <button
-            className="header__menu desktop__hidden"
+            className="header__menu header__desktop-hidden"
             onClick={handleMenuBtnClick}
           >
             =
@@ -135,7 +135,7 @@ function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
             Sign in
           </button>
           <button
-            className="header__menu desktop__hidden"
+            className="header__menu header__desktop-hidden"
             onClick={handleMenuBtnClick}
           >
             =
