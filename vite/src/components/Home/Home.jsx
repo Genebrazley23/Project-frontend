@@ -6,7 +6,7 @@ import Preloader from "../Preloader/preloader";
 import NewsCard from "../NewsCard/NewsCard";
 import aboutImage from "../../assets/Aboutimage.jpeg";
 import Footer from "../Footer/Footer";
-import notfound from "../../assets/notfound.png";
+import notfound from "../../assets/notfound.svg";
 import Header from "../Header/Header";
 
 const Home = ({ handleSearch, hasApiError, showLoginForm, handleLogout }) => {

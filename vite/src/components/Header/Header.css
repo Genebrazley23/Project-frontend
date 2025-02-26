@@ -159,13 +159,14 @@
 
 .saved-articles-underlined {
   border-bottom: 4px solid #000000;
-  width: 178px;
 }
 
 @media screen and (min-width: 550px) and (max-width: 880px) {
   .header {
     max-width: 880px;
     height: 66px;
+    padding-right: 6px;
+    box-sizing: border-box;
   }
   .header__menu {
     display: none;
@@ -182,9 +183,11 @@
 
   .header__page-title {
     margin-bottom: 6px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 4px;
+    margin-right: 4px;
     height: 72px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .home__description {

@@ -108,4 +108,8 @@
     padding-bottom: 32px;
     margin: 0;
   }
+
+  .news-card__title {
+    padding-left: 16px;
+  }
 }

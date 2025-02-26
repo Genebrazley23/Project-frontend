@@ -18,6 +18,10 @@
   width: 100%;
 }
 
+.modal__input:focus {
+  background-color: aliceblue;
+}
+
 .modal__radio-buttons {
   border: none;
   padding: 12px 0;

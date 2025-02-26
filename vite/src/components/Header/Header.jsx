@@ -2,8 +2,8 @@ import "./Header.css";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import closeButton from "../../assets/Closeicon.png";
-import backbutton from "../../assets/back.png";
+import closeButton from "../../assets/closeicon.svg";
+import backbutton from "../../assets/backbutton.svg";
 
 function Header({ handleSignInBtnClick, handleLogout, headerTheme }) {
   const currentUser = useContext(CurrentUserContext);

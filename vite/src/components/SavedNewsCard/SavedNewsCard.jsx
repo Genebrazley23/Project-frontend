@@ -1,5 +1,5 @@
 import "./SavedNewsCard.css";
-import trashcan from "../../assets/trashcan.png";
+import trashcan from "../../assets/trash.svg";
 import { useEffect, useState } from "react";
 import dataLoader from "../../utils/data";
 import { useLiveData } from "../../utils/constants";
@@ -32,12 +32,7 @@ function SavedNewsCard({ news, deleteSaveNews }) {
           title="Delete"
         >
           {" "}
-          <div
-            className="saved-card-delete__icon"
-            style={{
-              backgroundImage: `url(${trashcan})`,
-            }}
-          ></div>
+          <img className="saved-card-delete__icon" src={trashcan}></img>
         </button>
         <div className="keyword">{news.keyword}</div>
       </div>

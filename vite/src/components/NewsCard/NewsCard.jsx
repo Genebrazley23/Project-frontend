@@ -1,6 +1,6 @@
 import "./NewsCard.css";
-import bookmark from "../../assets/bookmark.png";
-import bookmarked from "../../assets/bookmarked.png";
+import bookmark from "../../assets/bookmark.svg";
+import bookmarked from "../../assets/bookmarked.svg";
 import { useEffect, useState } from "react";
 import dataLoader from "../../utils/data";
 import { useLiveData } from "../../utils/constants";
@@ -13,7 +13,7 @@ function NewsCard({ news, isLoggedIn, index }) {
     day: "numeric",
   });
   const formattedPublishDate = formatter.format(new Date(news.publishedAt));
-
+  console.log(bookmark, bookmarked);
   useEffect(() => {
     if (useLiveData) {
       setIsBookMarked(index % 2 === 0);
@@ -45,12 +45,10 @@ function NewsCard({ news, isLoggedIn, index }) {
           title={isLoggedIn ? "Save article" : "Sign in to save articles"}
           disabled={!isLoggedIn}
         >
-          <div
+          <img
             className="bookmark__icon"
-            style={{
-              backgroundImage: `url(${isBookMarked ? bookmarked : bookmark})`,
-            }}
-          ></div>
+            src={isBookMarked ? bookmarked : bookmark}
+          ></img>
         </button>
       </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import fb from "../../assets/fb.png";
-import github from "../../assets/github.png";
+import fb from "../../assets/facebook.svg";
+import github from "../../assets/gt.svg";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

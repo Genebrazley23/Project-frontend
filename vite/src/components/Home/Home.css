@@ -157,7 +157,12 @@
 }
 
 .search__input-button:hover {
-  background-color: #0056b3;
+  background-color: #347eff;
+  cursor: pointer;
+}
+
+.search__input-button:active {
+  background-color: #2a65cc;
 }
 
 .home__topHalf {
