@@ -80,3 +80,13 @@ The project is deployed on GitHub Pages and can be accessed here:
    ```bash
    git clone https://github.com/Genebrazley23/Project-frontend.git
    ```
+
+   ## System Requirements
+
+Node.js: v14 or later
+
+npm: v6 or later
+
+Browser: Chrome, Firefox, Safari, or Edge (latest versions recommended)
+
+API Key: A valid API key from News API is required for fetching news articles.
