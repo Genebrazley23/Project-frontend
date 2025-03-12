@@ -63,7 +63,8 @@ This project sets up the frontend infrastructure to interact with a third-party 
   ```
 
   ## Demo :
-https://youtu.be/1ee3MowyCdU
+https://youtu.be/gCRQMgS4l3E
+
 
   ## Images: <img width="1222" alt="Screen Shot 2025-03-03 at 2 36 42 PM" src="https://github.com/user-attachments/assets/f56fa062-a25a-47d2-86eb-f5d928abf31e" />
 <img width="1263" alt="Screen Shot 2025-03-03 at 2 42 00 PM" src="https://github.com/user-attachments/assets/30a2b5a0-1f08-4f14-8966-fcbe57c41dfb" />
