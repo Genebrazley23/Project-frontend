@@ -62,8 +62,9 @@ This project sets up the frontend infrastructure to interact with a third-party 
       : "https://newsapi.org/v2/everything";
   ```
 
-  ## Demo :
-https://youtu.be/gCRQMgS4l3E
+  ## Demo & Live Project:
+- https://youtu.be/gCRQMgS4l3E
+- https://genebrazley23.github.io/Project-frontend/
 
 
   ## Images: <img width="1222" alt="Screen Shot 2025-03-03 at 2 36 42 PM" src="https://github.com/user-attachments/assets/f56fa062-a25a-47d2-86eb-f5d928abf31e" />
